@@ -1,20 +1,12 @@
 {
-  "name": "inpower-operational-continuity",
+  "name": "inpower-site",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "deploy": "npm run build && wrangler deploy"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "build": "node scripts/verify-site.mjs",
+    "deploy": "wrangler deploy"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.0.3",
-    "vite": "^4.5.0",
     "wrangler": "^4.26.0"
   }
 }

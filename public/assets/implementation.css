@@ -1,0 +1,266 @@
+:root {
+  --paper: #F8F8F6;
+  --carbon: #111111;
+  --carbon-soft: #5F6368;
+  --line: #D8D8D2;
+  --diagram: #9A9A90;
+  --amber: #C98A2E;
+  --white: #FFFFFF;
+  --motion: cubic-bezier(.2, 0, .08, 1);
+  --serif: Spectral, Georgia, serif;
+  --sans: "IBM Plex Sans", Arial, sans-serif;
+  --mono: "IBM Plex Mono", Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  background: var(--paper);
+  color: var(--carbon);
+  font-family: var(--sans);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--carbon);
+}
+
+.implementation { overflow: hidden; }
+
+.chapter-panel {
+  min-height: var(--editorial-panel);
+  display: grid;
+  place-items: center;
+  padding: clamp(3rem, 7vw, 7rem);
+}
+
+.long-pause-panel,
+.final-panel { min-height: var(--editorial-panel); }
+
+.editorial-line,
+.inpower-name,
+.question-block,
+.implementation-list,
+.service-line,
+.final-line {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 1700ms var(--motion), transform 1700ms var(--motion);
+}
+
+.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.editorial-line,
+.service-line,
+.final-line {
+  max-width: 20ch;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(3.25rem, 8.4vw, 10.2rem);
+  line-height: 1.02;
+  letter-spacing: -.012em;
+  text-align: center;
+}
+
+.editorial-line span,
+.service-line span,
+.final-line span { display: block; }
+
+.inpower-name {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(3.5rem, 10vw, 9rem);
+  line-height: .9;
+  letter-spacing: -.02em;
+  text-align: center;
+}
+
+.question-panel { align-items: center; }
+
+.question-block {
+  width: min(100%, 1060px);
+  display: grid;
+  gap: clamp(1.1rem, 2.4vw, 2.6rem);
+}
+
+.question-label {
+  margin: 0;
+  color: var(--carbon-soft);
+  font-family: var(--mono);
+  font-size: clamp(.78rem, 1.05vw, .98rem);
+  letter-spacing: .18em;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.question-block h2 {
+  max-width: 14ch;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(4rem, 9vw, 11rem);
+  line-height: .98;
+  letter-spacing: -.012em;
+}
+
+.question-block p:not(.question-label) {
+  max-width: 45rem;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.55rem, 2.7vw, 3rem);
+  line-height: 1.24;
+}
+
+.implementation-list {
+  width: min(100%, 900px);
+  display: grid;
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+.implementation-list > p {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 5vw, 6rem);
+  line-height: 1;
+}
+
+.implementation-list ul {
+  display: grid;
+  gap: clamp(.85rem, 1.6vw, 1.45rem);
+  margin: 0;
+  padding: 0;
+  font-family: var(--mono);
+  font-size: clamp(.95rem, 1.35vw, 1.25rem);
+  letter-spacing: .16em;
+  line-height: 1.8;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.service-line { max-width: 18ch; }
+
+.service-line span,
+.final-line span {
+  margin-top: clamp(1.6rem, 3vw, 3rem);
+  color: var(--carbon-soft);
+  font-family: var(--serif);
+  font-size: .36em;
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+.final-line { max-width: 21ch; }
+
+.final-line span:last-child {
+  color: var(--carbon);
+}
+
+@media (max-width: 760px) {
+  .chapter-panel { padding: clamp(2rem, 8vw, 4rem); }
+
+  .editorial-line,
+  .service-line,
+  .final-line {
+    font-size: clamp(2.65rem, 12vw, 5.8rem);
+  }
+
+  .inpower-name { font-size: clamp(3rem, 13vw, 5.6rem); }
+
+  .question-block h2 { font-size: clamp(3.1rem, 13vw, 6.2rem); }
+
+  .question-block p:not(.question-label) {
+    font-size: clamp(1.35rem, 6vw, 2.25rem);
+  }
+}
+
+.implementation-progression {
+  max-width: 980px;
+}
+
+.implementation-progression > p {
+  max-width: 20ch;
+}
+
+.implementation-progression > p:nth-child(even) {
+  justify-self: end;
+  text-align: right;
+}
+
+@media (max-width: 760px) {
+  .implementation-progression > p:nth-child(even) {
+    justify-self: start;
+    text-align: left;
+  }
+}
+
+
+/* Production typography role mapping. */
+.question-block h2,
+.question-block p:not(.question-label),
+.pattern-observation,
+.pattern-question,
+.observation dd {
+  font-family: var(--sans);
+}
+
+
+/* Production spatial rhythm normalization. */
+:root {
+  --rhythm-panel: clamp(3rem, 7vw, 7rem);
+  --rhythm-panel-mobile: clamp(2rem, 8vw, 4rem);
+  --rhythm-gap: clamp(1.25rem, 2.6vw, 2.6rem);
+  --rhythm-gap-large: clamp(2.5rem, 5vw, 5rem);
+  --rhythm-long: var(--editorial-panel);
+  --rhythm-final: var(--editorial-panel);
+}
+
+.chapter-panel {
+  padding: var(--rhythm-panel);
+}
+
+.long-pause-panel {
+  min-height: var(--rhythm-long);
+}
+
+.final-panel {
+  min-height: var(--rhythm-final);
+}
+
+@media (max-width: 760px) {
+  .chapter-panel {
+    padding: var(--rhythm-panel-mobile);
+  }
+}
+
+
+/* Production spacing: implementation chapter specifics. */
+.question-block,
+.implementation-list {
+  gap: var(--rhythm-gap);
+}
+
+.service-line span,
+.final-line span {
+  margin-top: var(--rhythm-gap);
+}
+
+.name-panel {
+  min-height: var(--editorial-panel);
+}
+
+
+/* Production regression fix: continuous editorial reveal choreography. */
+[data-reveal] {
+  opacity: var(--reveal-opacity, 0);
+  transform: translateY(var(--reveal-y, 18px));
+  transition: none;
+}
+
+[data-model] {
+  opacity: var(--reveal-opacity, 0);
+  transform: translateY(var(--reveal-y, 18px));
+}

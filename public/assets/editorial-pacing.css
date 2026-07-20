@@ -1,0 +1,97 @@
+/* Production editorial pacing system. */
+.chapter-home {
+  position: fixed;
+  top: 24px;
+  left: 28px;
+  z-index: 20;
+  color: currentColor;
+  font: 500 11px "IBM Plex Mono", monospace;
+  letter-spacing: .16em;
+  text-decoration: none;
+  opacity: .72;
+}
+
+.chapter-home:hover,
+.chapter-home:focus-visible {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+:root {
+  --editorial-panel: 112svh;
+  --editorial-panel-large: 124svh;
+  --editorial-focus: 44svh;
+}
+
+.chapter-panel,
+.realization-panel,
+.closing-panel,
+.bridge-panel,
+.long-pause-panel,
+.final-panel,
+.thesis-panel,
+.pattern-panel,
+.name-panel,
+.service-panel,
+.opening-panel {
+  min-height: var(--editorial-panel);
+}
+
+.diagram-panel,
+.observations-panel,
+.changes-panel,
+.implementation-list-panel {
+  min-height: var(--editorial-panel-large);
+}
+
+.law-four .law-card {
+  min-height: auto;
+}
+
+.chapter-cover,
+.realization-panel,
+.transition-panel,
+.statement-panel,
+.closing-panel,
+.bridge-panel,
+.diagram-panel,
+.opening-panel,
+.long-pause-panel,
+.final-panel,
+.thesis-panel,
+.name-panel,
+.service-panel,
+.observatory-cover,
+.chapter-panel:not(.question-panel):not(.implementation-list-panel):not(.pattern-panel) {
+  place-items: start center;
+}
+
+.chapter-cover > [data-reveal],
+.realization-panel > [data-reveal],
+.transition-panel > [data-reveal],
+.statement-panel > [data-reveal],
+.closing-panel > [data-reveal],
+.bridge-panel > [data-reveal],
+.opening-panel > [data-reveal],
+.long-pause-panel > [data-reveal],
+.final-panel > [data-reveal],
+.thesis-panel > [data-reveal],
+.name-panel > [data-reveal],
+.service-panel > [data-reveal],
+.observatory-cover > [data-reveal],
+.chapter-panel:not(.question-panel):not(.implementation-list-panel):not(.pattern-panel) > [data-reveal],
+.diagram-panel .diagram-section[data-reveal] {
+  position: sticky;
+  top: var(--editorial-focus);
+  transform: translateY(calc(-50% + var(--reveal-y, 0px)));
+  opacity: var(--reveal-opacity, 0);
+}
+
+@media (max-width: 820px) {
+  :root {
+    --editorial-panel: 108svh;
+    --editorial-panel-large: 118svh;
+    --editorial-focus: 45svh;
+  }
+}

@@ -1,0 +1,247 @@
+:root {
+  --paper: #F8F8F6;
+  --carbon: #111111;
+  --carbon-soft: #5F6368;
+  --line: #D8D8D2;
+  --diagram: #9A9A90;
+  --amber: #C98A2E;
+  --white: #FFFFFF;
+  --motion: cubic-bezier(.2, 0, .08, 1);
+  --serif: Spectral, Georgia, serif;
+  --sans: "IBM Plex Sans", Arial, sans-serif;
+  --mono: "IBM Plex Mono", Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  background: var(--paper);
+  color: var(--carbon);
+  font-family: var(--sans);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--carbon);
+}
+
+.observatory { overflow: hidden; }
+
+.chapter-panel {
+  min-height: var(--editorial-panel);
+  display: grid;
+  place-items: center;
+  padding: clamp(3rem, 7vw, 7rem);
+}
+
+.long-pause-panel { min-height: var(--editorial-panel); }
+
+.cover-inner,
+.editorial-line,
+.observation {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 1700ms var(--motion), transform 1700ms var(--motion);
+}
+
+.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cover-inner {
+  text-align: center;
+}
+
+.cover-inner h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(4.2rem, 12vw, 14rem);
+  line-height: .92;
+  letter-spacing: .02em;
+}
+
+.cover-inner p {
+  max-width: 58rem;
+  margin: clamp(1.8rem, 3vw, 3rem) auto 0;
+  color: var(--carbon-soft);
+  font-family: var(--mono);
+  font-size: clamp(.82rem, 1.1vw, 1rem);
+  letter-spacing: .12em;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+
+.editorial-line {
+  max-width: 21ch;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(3.35rem, 8.4vw, 10.2rem);
+  line-height: 1.02;
+  letter-spacing: -.012em;
+  text-align: center;
+}
+
+.archive {
+  width: min(100%, 1280px);
+  margin: 0 auto;
+  padding: clamp(7rem, 12vw, 14rem) clamp(2rem, 6vw, 7rem) clamp(8rem, 12vw, 14rem);
+}
+
+.observation {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: clamp(3rem, 7vw, 8rem);
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  border-top: 1px solid var(--line);
+}
+
+.observation:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.observation-head p,
+.observation dt {
+  margin: 0;
+  color: var(--carbon-soft);
+  font-family: var(--mono);
+  font-size: clamp(.78rem, 1vw, .96rem);
+  letter-spacing: .18em;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.observation h2 {
+  max-width: 15ch;
+  margin: clamp(1.2rem, 2vw, 2rem) 0 0;
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 5.4vw, 6.8rem);
+  line-height: 1.02;
+  letter-spacing: -.012em;
+}
+
+.observation h2 span,
+.observation dd span {
+  display: block;
+}
+
+.observation dl {
+  display: grid;
+  gap: clamp(2rem, 3.5vw, 4rem);
+  margin: 0;
+}
+
+.observation div {
+  display: grid;
+  gap: clamp(.7rem, 1.2vw, 1.2rem);
+}
+
+.observation dd {
+  max-width: 43rem;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 2.35vw, 2.65rem);
+  line-height: 1.25;
+}
+
+@media (max-width: 820px) {
+  .chapter-panel {
+    padding: clamp(2rem, 8vw, 4rem);
+  }
+
+  .cover-inner h1,
+  .editorial-line {
+    font-size: clamp(3.1rem, 13vw, 6.4rem);
+  }
+
+  .archive {
+    padding-inline: clamp(2rem, 7vw, 4rem);
+  }
+
+  .observation {
+    grid-template-columns: 1fr;
+    gap: clamp(2.4rem, 7vw, 4rem);
+  }
+
+  .observation h2 {
+    font-size: clamp(2.6rem, 11vw, 5.8rem);
+  }
+
+  .observation dd {
+    font-size: clamp(1.3rem, 5.8vw, 2.2rem);
+  }
+}
+
+
+/* Production typography role mapping. */
+.question-block h2,
+.question-block p:not(.question-label),
+.pattern-observation,
+.pattern-question,
+.observation dd {
+  font-family: var(--sans);
+}
+
+
+/* Production spatial rhythm normalization. */
+:root {
+  --rhythm-panel: clamp(3rem, 7vw, 7rem);
+  --rhythm-panel-mobile: clamp(2rem, 8vw, 4rem);
+  --rhythm-gap: clamp(1.25rem, 2.6vw, 2.6rem);
+  --rhythm-gap-large: clamp(2.5rem, 5vw, 5rem);
+  --rhythm-long: var(--editorial-panel);
+  --rhythm-final: var(--editorial-panel);
+}
+
+.chapter-panel {
+  padding: var(--rhythm-panel);
+}
+
+.long-pause-panel {
+  min-height: var(--rhythm-long);
+}
+
+.final-panel {
+  min-height: var(--rhythm-final);
+}
+
+@media (max-width: 760px) {
+  .chapter-panel {
+    padding: var(--rhythm-panel-mobile);
+  }
+}
+
+
+/* Production spacing: Observatory archive rhythm. */
+.archive {
+  padding-top: clamp(7rem, 11vw, 12rem);
+  padding-bottom: clamp(7rem, 11vw, 12rem);
+}
+
+.observation {
+  gap: clamp(3.5rem, 7vw, 7rem);
+  padding: clamp(5rem, 8vw, 7rem) 0;
+}
+
+.observation dl {
+  gap: var(--rhythm-gap-large);
+}
+
+.observation div {
+  gap: clamp(.85rem, 1.3vw, 1.25rem);
+}
+
+
+/* Production regression fix: continuous editorial reveal choreography. */
+[data-reveal] {
+  opacity: var(--reveal-opacity, 0);
+  transform: translateY(var(--reveal-y, 18px));
+  transition: none;
+}
+
+[data-model] {
+  opacity: var(--reveal-opacity, 0);
+  transform: translateY(var(--reveal-y, 18px));
+}

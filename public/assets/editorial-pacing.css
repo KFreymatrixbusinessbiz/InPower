@@ -139,3 +139,75 @@
   .chapter-nav a { min-width: 0; padding: 9px 10px; }
   .chapter-nav strong { display: none; }
 }
+
+/* Editorial reset: sustained reading rhythm instead of full-screen pauses. */
+:root {
+  --editorial-panel: 82svh;
+  --editorial-panel-large: 96svh;
+  --editorial-focus: 41svh;
+}
+
+.chapter-panel,
+.realization-panel,
+.closing-panel,
+.bridge-panel,
+.long-pause-panel,
+.final-panel,
+.thesis-panel,
+.pattern-panel,
+.name-panel,
+.service-panel,
+.opening-panel {
+  min-height: var(--editorial-panel);
+}
+
+.diagram-panel,
+.observations-panel,
+.changes-panel,
+.implementation-list-panel {
+  min-height: var(--editorial-panel-large);
+}
+
+body h1 {
+  font-size: clamp(3.5rem, 7.2vw, 6.8rem) !important;
+  line-height: .98 !important;
+}
+
+body h2,
+body .realization-line,
+body .sequence-line,
+body .statement-line,
+body .bridge-line,
+body .editorial-line,
+body .thesis-line {
+  font-size: clamp(2.65rem, 5vw, 4.8rem) !important;
+  line-height: 1.06 !important;
+}
+
+body h3,
+body .change-row h3,
+body .observation-row h3 {
+  line-height: 1.12;
+}
+
+@media (max-width: 820px) {
+  :root {
+    --editorial-panel: 88svh;
+    --editorial-panel-large: 104svh;
+    --editorial-focus: 44svh;
+  }
+
+  body h1 {
+    font-size: clamp(3rem, 13vw, 5.4rem) !important;
+  }
+
+  body h2,
+  body .realization-line,
+  body .sequence-line,
+  body .statement-line,
+  body .bridge-line,
+  body .editorial-line,
+  body .thesis-line {
+    font-size: clamp(2.35rem, 10.5vw, 4.4rem) !important;
+  }
+}

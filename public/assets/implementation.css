@@ -264,3 +264,106 @@ body {
   opacity: var(--reveal-opacity, 0);
   transform: translateY(var(--reveal-y, 18px));
 }
+
+/* Operational implementation system. */
+.implementation-system-panel {
+  min-height: auto;
+  padding-top: clamp(6rem, 10vw, 10rem);
+  padding-bottom: clamp(6rem, 10vw, 10rem);
+}
+
+.implementation-system {
+  width: min(100%, 1120px);
+}
+
+.implementation-system header {
+  margin-bottom: clamp(2.5rem, 5vw, 5rem);
+}
+
+.implementation-system h2 {
+  max-width: 12ch;
+  margin: .5rem 0 0;
+  font-family: var(--serif);
+  font-size: clamp(2.65rem, 5vw, 4.8rem);
+  font-weight: 400;
+  line-height: 1.06;
+}
+
+.implementation-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.implementation-steps li {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 3rem);
+  padding: clamp(1.6rem, 3vw, 2.6rem) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.implementation-steps li > span {
+  color: var(--amber);
+  font-family: var(--mono);
+  font-size: .82rem;
+  letter-spacing: .14em;
+}
+
+.implementation-steps strong {
+  display: block;
+  margin-bottom: .45rem;
+  font-family: var(--sans);
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  font-weight: 500;
+}
+
+.implementation-steps p {
+  max-width: 46rem;
+  margin: 0;
+  color: var(--carbon-soft);
+  font-family: var(--sans);
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.65;
+}
+
+.platform-block p:last-child,
+.terms-block p:not(.question-label) {
+  max-width: 48rem;
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+  line-height: 1.5;
+}
+
+.boundary-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.boundary-columns > div {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.boundary-columns strong {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--amber);
+  font-family: var(--mono);
+  font-size: .8rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.boundary-columns p {
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem) !important;
+  line-height: 1.55 !important;
+}
+
+@media (max-width: 760px) {
+  .implementation-steps li { grid-template-columns: 2.5rem minmax(0, 1fr); }
+  .boundary-columns { grid-template-columns: 1fr; }
+}

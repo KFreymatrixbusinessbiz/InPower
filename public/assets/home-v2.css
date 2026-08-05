@@ -167,6 +167,30 @@ button,input,textarea,select{font:inherit}
 }
 .outcome-grid p{font-size:16px;line-height:1.6;color:#454945}
 
+.scenario-bridge{
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(440px,1.1fr);
+  gap:clamp(48px,7vw,100px);
+  align-items:center;
+  color:#fff;
+  background:#171c20;
+}
+.scenario-bridge-copy h2{
+  max-width:10ch;
+  margin:12px 0 20px;
+  font-size:clamp(36px,4.25vw,62px);
+  line-height:1.02;
+  letter-spacing:-.045em;
+  font-weight:600;
+}
+.scenario-bridge-copy>p:last-of-type{max-width:620px;color:#c9cecf;font-size:17px;line-height:1.7}
+.scenario-bridge-copy a{display:inline-flex;gap:36px;margin-top:24px;padding:14px 0;border-bottom:1px solid var(--amber);color:#fff;font-weight:700;text-decoration:none}
+.scenario-bridge-copy a span{color:var(--amber)}
+.scenario-bridge-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.scenario-bridge-grid div{min-height:180px;padding:26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.scenario-bridge-grid span{display:block;color:var(--amber);font:11px var(--mono)}
+.scenario-bridge-grid strong{display:block;margin-top:58px;font-size:20px;line-height:1.25}
+
 .evidence-dark{
   color:var(--white);
   background:
@@ -422,7 +446,7 @@ button,input,textarea,select{font:inherit}
   .main-nav{display:none;position:absolute;top:82px;left:0;right:0;flex-direction:column;align-items:stretch;padding:24px;background:#0d1012}
   .main-nav.open{display:flex}
   .menu-toggle{display:block}
-  .hero,.parts-evidence,.waste-layout,.inpower-section,.discussion,.evidence-layout{grid-template-columns:1fr}
+  .hero,.parts-evidence,.waste-layout,.inpower-section,.discussion,.evidence-layout,.scenario-bridge{grid-template-columns:1fr}
   .hero{padding-top:140px}
   .hero-proof{max-width:580px}
   .outcome-grid{grid-template-columns:1fr 1fr}
@@ -438,7 +462,9 @@ button,input,textarea,select{font:inherit}
   .main-nav{top:72px}
   .hero{grid-template-columns:1fr;min-height:auto;padding-top:132px;padding-bottom:72px}
   .hero h1{font-size:clamp(58px,17vw,88px)}
-  .outcome-grid,.recovery-compare,.boundary-grid,.capability-flow,.pillars{grid-template-columns:1fr}
+  .outcome-grid,.recovery-compare,.boundary-grid,.capability-flow,.pillars,.scenario-bridge-grid{grid-template-columns:1fr}
+  .scenario-bridge-grid div{min-height:auto}
+  .scenario-bridge-grid strong{margin-top:34px}
   .recovery-compare article+article,.boundary-grid article+article{border-left:0;border-top:1px solid var(--line)}
   .cause-chain{grid-template-columns:1fr}
   .cause-chain>div+div{border-left:0;border-top:1px solid var(--line)}

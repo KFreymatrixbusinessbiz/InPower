@@ -1,21 +1,31 @@
-# InPower Website Frontend
+# Output Security Institute
 
-Production-quality static homepage for InPower by Matrix Business Systems.
+Manufacturer-neutral educational site for the governance, security, integrity, and continuity of organizational output systems.
 
-## Structure
+## Local development
 
-- `index.html` - responsive homepage markup with inline SVG operating-model diagram
-- `assets/styles.css` - visual system, layout, responsive rules, and motion states
-- `assets/main.js` - navigation, scroll-triggered diagram shift, FAQ accordion, and contact-form interaction
+```bash
+npm install
+npm run dev
+```
 
-## Run
+## Production build
 
-Open `index.html` directly in a browser. No build step and no backend are required.
+```bash
+npm run build
+```
 
-## Design Notes
+## Cloudflare deployment
 
-- Background: warm engineered paper `#F7F4EE`
-- Text: deep carbon `#161616`
-- Accent: operational amber `#B67A1D`
-- No gradients, stock photography, printer hero imagery, glass effects, or decorative motion
-- Motion is limited to the operating-model shift and small interface responses
+Connect the repository to Cloudflare Workers Builds with:
+
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+- Production branch: `main`
+
+## Editorial safeguards
+
+- OSI does not represent or speak for NIST or any regulatory authority.
+- OSI guidance does not certify compliance.
+- Standards mappings must cite authoritative primary sources.
+- Product and manufacturer endorsements do not belong in the OICC framework.

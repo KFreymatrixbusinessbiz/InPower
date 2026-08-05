@@ -1,12 +1,21 @@
 {
-  "name": "inpower-site",
-  "version": "1.0.0",
+  "name": "output-security-institute",
   "private": true,
+  "version": "2.0.0",
+  "type": "module",
   "scripts": {
-    "build": "node scripts/verify-site.mjs",
-    "deploy": "wrangler deploy"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler deploy"
   },
-  "devDependencies": {
-    "wrangler": "^4.26.0"
-  }
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "lucide-react": "latest",
+    "wrangler": "latest"
+  },
+  "devDependencies": {}
 }

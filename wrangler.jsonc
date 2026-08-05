@@ -1,10 +1,9 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "inpower",
-  "compatibility_date": "2026-07-20",
+  "name": "output-security-institute",
+  "compatibility_date": "2026-07-18",
   "assets": {
-    "directory": "./public",
-    "not_found_handling": "404-page",
-    "html_handling": "auto-trailing-slash"
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
   }
 }

@@ -236,6 +236,7 @@ button,input,textarea,select{font:inherit}
   color:var(--graphite);
   white-space:nowrap;
 }
+.big-number.parts-claim{max-width:8ch;margin-bottom:18px;font-size:clamp(52px,6.2vw,92px);line-height:.9;white-space:normal}
 .number-statement h2{font-size:clamp(36px,4.5vw,64px)}
 .light-frame{border-color:#aaa99f;background:#fff}
 .parts-comparison-figure{min-width:0;margin:0}

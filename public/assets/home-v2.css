@@ -332,6 +332,47 @@ button,input,textarea,select{font:inherit}
     #171c20;
 }
 
+.technology-fit{
+  color:#fff;
+  background:#0d1113;
+}
+.technology-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--line);
+  border-left:1px solid var(--line);
+}
+.technology-grid article{
+  display:flex;
+  flex-direction:column;
+  min-height:390px;
+  padding:clamp(26px,3vw,38px);
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:#121719;
+}
+.technology-grid h3{
+  margin:clamp(44px,5vw,72px) 0 18px;
+  font-size:clamp(25px,2.25vw,34px);
+  line-height:1.08;
+}
+.technology-grid p{
+  margin:0 0 30px;
+  color:#c7cdce;
+  font-size:16px;
+  line-height:1.65;
+}
+.technology-grid strong{
+  display:block;
+  margin-top:auto;
+  padding-top:22px;
+  border-top:1px solid rgba(255,255,255,.12);
+  color:#fff;
+  font-size:13px;
+  line-height:1.55;
+  font-weight:600;
+}
+
 .discussion{
   display:grid;
   grid-template-columns:.9fr 1.1fr;
@@ -386,6 +427,8 @@ button,input,textarea,select{font:inherit}
   .hero-proof{max-width:580px}
   .outcome-grid{grid-template-columns:1fr 1fr}
   .capability-flow{grid-template-columns:1fr 1fr}
+  .technology-grid{grid-template-columns:1fr}
+  .technology-grid article{min-height:auto}
   .inpower-mark{position:static;max-width:390px}
 }
 

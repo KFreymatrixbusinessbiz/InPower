@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#242b2f"/><stop offset="1" stop-color="#0b0e10"/></linearGradient>
+    <pattern id="grid" width="54" height="54" patternUnits="userSpaceOnUse"><path d="M54 0H0V54" fill="none" stroke="#fff" stroke-opacity=".045"/></pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <path d="M820 0h380v630H610z" fill="#c98a2e" fill-opacity=".07"/>
+  <rect x="72" y="58" width="1056" height="514" fill="none" stroke="#c98a2e" stroke-opacity=".5"/>
+  <text x="110" y="135" fill="#c98a2e" font-family="Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="6">INPOWER®</text>
+  <text x="110" y="305" fill="#f8f8f5" font-family="Arial, sans-serif" font-size="76" font-weight="700">InPower works</text>
+  <text x="110" y="388" fill="#f8f8f5" font-family="Arial, sans-serif" font-size="76" font-weight="700">when you work.</text>
+  <text x="110" y="475" fill="#cbd0d1" font-family="Arial, sans-serif" font-size="25">A 24/7 inside-out operating model for print infrastructure.</text>
+  <text x="110" y="535" fill="#8f989a" font-family="Arial, sans-serif" font-size="17" letter-spacing="2">BY MATRIX BUSINESS SYSTEMS · INPOWER.BIZ</text>
+</svg>

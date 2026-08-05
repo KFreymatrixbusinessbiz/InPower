@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>InPower Readiness Assessment | Examine Your Operating Model</title>
+  <meta name="description" content="Use the InPower readiness assessment to identify print infrastructure dependencies involving continuity, security, staffing, location, recovery, and cost.">
+  <link rel="canonical" href="https://inpower.biz/readiness.html">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="InPower"><meta property="og:title" content="InPower Readiness Assessment"><meta property="og:description" content="Identify operating dependencies involving continuity, security, staffing, location, recovery, and cost."><meta property="og:url" content="https://inpower.biz/readiness.html"><meta property="og:image" content="https://inpower.biz/assets/inpower-social.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://inpower.biz/assets/inpower-social.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/readiness.css">
+  <link rel="stylesheet" href="assets/accessibility.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="assessment-header">
+    <a href="index.html" class="brand">INPOWER®</a>
+    <nav aria-label="Assessment navigation"><a href="scenarios.html">Scenarios</a><a href="implementation.html">How It Works</a><a href="index.html">Home</a></nav>
+  </header>
+
+  <main id="main-content">
+    <section class="assessment-hero">
+      <p class="eyebrow">InPower readiness assessment</p>
+      <h1>Does your operating model match the way you work?</h1>
+      <p>Select the conditions that are true today. This is not a sales score or compliance assessment. It is a structured way to expose dependencies that may deserve examination.</p>
+    </section>
+
+    <form id="readiness-form" class="assessment" aria-describedby="privacy-note">
+      <fieldset>
+        <legend><span>01</span> Continuity and response</legend>
+        <label><input type="checkbox" name="signal" value="continuity" data-theme="Continuity"><span><strong>An output interruption delays a larger operational or customer-facing process.</strong><small>The device may be inexpensive while the work waiting behind it is not.</small></span></label>
+        <label><input type="checkbox" name="signal" value="schedule" data-theme="Continuity"><span><strong>Work continues outside the hours when conventional service is reliably available.</strong><small>Nights, weekends, continuous operations, seasonal peaks, or emergency schedules change the recovery requirement.</small></span></label>
+        <label><input type="checkbox" name="signal" value="distance" data-theme="Continuity"><span><strong>Distance, travel, access, or location can delay technician response.</strong><small>Remote, distributed, maritime, temporary, or highly controlled locations magnify ordinary interruptions.</small></span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>02</span> Capability and ownership</legend>
+        <label><input type="checkbox" name="signal" value="ownership" data-theme="Capability"><span><strong>Internal personnel own the operational outcome but lack approved recovery capability.</strong><small>Responsibility already exists inside; the knowledge and authority to respond may not.</small></span></label>
+        <label><input type="checkbox" name="signal" value="repeat" data-theme="Capability"><span><strong>Outside service is requested for conditions that trained personnel could safely resolve.</strong><small>Repeated calls may indicate a capability gap rather than a technical requirement.</small></span></label>
+        <label><input type="checkbox" name="signal" value="boundary" data-theme="Capability"><span><strong>There is no clearly documented boundary between internal recovery and specialized escalation.</strong><small>Without a boundary, organizations either escalate everything or take on work they should not perform.</small></span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>03</span> Security and control</legend>
+        <label><input type="checkbox" name="signal" value="access" data-theme="Control"><span><strong>Routine service requires outside facility, device, credential, or network access.</strong><small>Every intervention adds an access event that must be scheduled, supervised, and governed.</small></span></label>
+        <label><input type="checkbox" name="signal" value="information" data-theme="Control"><span><strong>Devices operate near regulated, confidential, mission, or controlled information.</strong><small>The recovery model should respect the same boundary as the information system around it.</small></span></label>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>04</span> Economics and architecture</legend>
+        <label><input type="checkbox" name="signal" value="overhead" data-theme="Economics"><span><strong>Parts, consumables, inventory, travel, and labor create cost beyond the price per page.</strong><small>Traditional measurement can hide the operational work created by the architecture.</small></span></label>
+        <label><input type="checkbox" name="signal" value="contract" data-theme="Economics"><span><strong>The current commercial model is paid to respond to service demand rather than reduce it.</strong><small>The incentives behind the support model may no longer match the desired outcome.</small></span></label>
+      </fieldset>
+
+      <section class="assessment-result" aria-live="polite">
+        <div><p class="eyebrow">Your operating signals</p><strong id="signal-count">0 conditions selected</strong></div>
+        <div><p id="result-copy">Select the conditions that apply. The useful result is not the number; it is the pattern they reveal.</p><p id="theme-copy"></p></div>
+      </section>
+      <p id="privacy-note" class="privacy-note">Your selections remain in this browser. Nothing is submitted or stored.</p>
+    </form>
+
+    <section class="interpretation">
+      <div><p class="eyebrow">Interpret the result</p><h2>A signal is a reason to examine—not a reason to replace.</h2></div>
+      <div>
+        <p><strong>Few or no signals:</strong> conventional service may already match the operating requirement.</p>
+        <p><strong>Several related signals:</strong> examine that dependency before the next acquisition or contract renewal.</p>
+        <p><strong>Signals across several themes:</strong> the issue may be the operating model rather than an isolated device or service event.</p>
+      </div>
+    </section>
+
+    <section class="assessment-close">
+      <p class="eyebrow">Begin with the operating model</p>
+      <h2>We will help determine what should change before deciding what should be replaced.</h2>
+      <div><a href="mailto:contact@matrixbusiness.biz?subject=InPower%20readiness%20discussion">Discuss your assessment <span>→</span></a><a href="tel:+14024388030">Call 402-438-8030 <span>→</span></a></div>
+    </section>
+  </main>
+  <script src="assets/readiness.js"></script>
+</body>
+</html>

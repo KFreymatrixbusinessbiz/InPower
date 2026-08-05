@@ -1,43 +1,273 @@
-import {useEffect,useMemo,useState} from 'react'
-import {ArrowRight,ExternalLink,Menu,Search,X} from 'lucide-react'
-import './styles.css'
+import "./styles.css";
 
-const controls=[
-['01','Governance and ownership','Assign accountable owners for systems, data, configurations, service access, risk acceptance, and lifecycle decisions.'],
-['02','Asset and dependency visibility','Know what is deployed, where it is, what it connects to, and which people, vendors, platforms, and supplies it depends on.'],
-['03','Identity and access','Control and review every user, administrator, application, service, and physical access path.'],
-['04','Secure configuration','Maintain approved baselines for protocols, ports, certificates, firmware, storage, logging, and administrative settings.'],
-['05','Data and document protection','Protect information as it is transmitted, processed, stored, printed, scanned, released, retained, and destroyed.'],
-['06','Logging and evidence','Preserve the inventories, events, identities, settings, and custody records needed to investigate and demonstrate control.'],
-['07','Service and supply chain','Govern remote tools, credentials, firmware sources, replacement components, external access, and third-party dependencies.'],
-['08','Recovery and continuity','Design safe local recovery, escalation, availability, and fallback before normal support becomes unavailable.'],
-['09','Lifecycle assurance','Treat acquisition, deployment, change, reassignment, maintenance, decommissioning, and verified data removal as one control surface.']]
-const sources=[
-['NIST CSF 2.0','Framework','All sectors','Govern, Identify, Protect, Detect, Respond, and Recover.','https://www.nist.gov/publications/nist-cybersecurity-framework-csf-20'],
-['NIST SP 800-53 Rev. 5','Control catalog','Federal / regulated','Security and privacy controls for information systems and organizations.','https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final'],
-['NIST SP 800-171 Rev. 3','Requirements','Defense supply chain','Protection of controlled unclassified information in nonfederal systems.','https://csrc.nist.gov/pubs/sp/800/171/r3/final'],
-['NIST SP 800-207','Architecture','All sectors','Zero Trust Architecture principles for users, devices, workloads, and resources.','https://csrc.nist.gov/pubs/sp/800/207/final'],
-['NIST SP 800-88 Rev. 1','Guidance','All sectors','Media sanitization and disposition guidance.','https://csrc.nist.gov/pubs/sp/800/88/r1/final'],
-['CISA Zero Trust Maturity Model 2.0','Maturity model','Public / private','A maturity path across identity, devices, networks, applications, and data.','https://www.cisa.gov/resources-tools/resources/zero-trust-maturity-model'],
-['HIPAA Security Rule','Regulation','Healthcare','Administrative, physical, and technical safeguards for electronic protected health information.','https://www.hhs.gov/hipaa/for-professionals/security/index.html'],
-['FERPA Data Security Guidance','Guidance','Education','Federal student privacy and data security resources for education organizations.','https://studentprivacy.ed.gov/data-security-k-12-and-higher-education'],
-['FFIEC Architecture, Infrastructure and Operations','Handbook','Financial services','Examiner guidance for architecture, infrastructure, operations, and resilience.','https://www.ffiec.gov/news/press-releases/2021/pr-06-30'],
-['DoD CMMC','Program','Defense industrial base','Cybersecurity assessment requirements for organizations handling federal contract information and CUI.','https://dodcio.defense.gov/CMMC/']]
-const industries=[['Healthcare','Patient information, clinical availability, secure release, qualified internal teams, and controlled service access.'],['Government & Defense','Controlled information, segmented environments, identity, evidence, acquisition, and mission continuity.'],['Financial Services','Customer information, auditability, retention, branch continuity, and third-party oversight.'],['Education','Distributed campuses, shared devices, student records, constrained resources, and decentralized ownership.'],['Manufacturing & Logistics','Production records, labels, intellectual property, remote sites, uptime, and supply-chain dependencies.'],['Legal & Professional','Client confidentiality, matter-level access, chain of custody, retention, and verified disposition.']]
-const principles=[['Output is a security boundary','Information changes custody, form, location, and visibility when it crosses from digital systems into physical output.'],['Ownership must be explicit','A control without a named owner is an assumption, not a control.'],['Every access path must justify itself','Users, administrators, applications, vendors, and service tools should receive only the access the operation requires.'],['Evidence must survive the event','Logs, settings, inventories, identities, and custody records should remain useful when something goes wrong.'],['Continuity is a security outcome','An organization that cannot operate safely during disruption has not finished its security design.'],['Compliance is contextual','A citation is not a conclusion; applicability, implementation, evidence, and residual risk still require judgment.'],['Technology claims require verification','Published capabilities should be tested against configuration, workflow, environment, and actual operating behavior.'],['The lifecycle is one control surface','Acquisition through disposition must be governed as a connected sequence, not isolated transactions.']]
-const nav=[['Controls','/controls'],['Standards','/standards'],['Industries','/industries'],['Doctrine','/doctrine'],['Resources','/resources'],['About','/about']]
-const current=()=>location.pathname.replace(/\/+$/,'')||'/'
-function Link({to,children,className=''}){return <a className={className} href={to} onClick={e=>{if(to[0]==='/'){e.preventDefault();history.pushState({},'',to);dispatchEvent(new PopStateEvent('popstate'));scrollTo(0,0)}}}>{children}</a>}
-function Header({path}){const[open,setOpen]=useState(false);return <header><Link to="/" className="brand"><b>OSI</b><span>OUTPUT SECURITY<br/>INSTITUTE</span></Link><nav className={open?'open':''}>{nav.map(([n,u])=><Link key={u} to={u} className={path===u?'active':''}>{n}</Link>)}<a className="contact" href="mailto:info@outputsecurityinstitute.org">Contribute</a></nav><button className="menu" aria-label="Toggle navigation" onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button></header>}
-function Shell({path,children}){useEffect(()=>{document.title=path==='/'?'Output Security Institute':`${nav.find(x=>x[1]===path)?.[0]||'Output Security'} | Output Security Institute`;let c=document.querySelector('link[rel=canonical]');if(!c){c=document.createElement('link');c.rel='canonical';document.head.append(c)}c.href=`https://outputsecurityinstitute.org${path}`},[path]);return <><Header path={path}/>{children}<footer><div><b>OSI</b><p>Independent guidance for security beyond the screen.</p></div><div>{nav.map(([n,u])=><Link key={u} to={u}>{n}</Link>)}</div><small>© {new Date().getFullYear()} Output Security Institute. OSI is an independent educational initiative and does not certify products, organizations, or regulatory compliance.</small></footer></>}
-const Label=({children})=><p className="label">{children}</p>
-function CTA(){return <section className="cta"><Label>CONTINUE THE WORK</Label><h2>Bring output systems into the security conversation.</h2><p>Use OSI material to begin a cross-functional discussion among security, IT, compliance, operations, procurement, and service stakeholders.</p><a href="mailto:info@outputsecurityinstitute.org">Contribute to the discussion <ArrowRight/></a></section>}
-function Home(){return <main><section className="hero"><Label>INDEPENDENT GUIDANCE FOR OUTPUT SECURITY</Label><h1>Security does not end<br/>at the <em>screen.</em></h1><p>Output systems sit where digital control becomes physical custody. OSI gives organizations a clearer way to govern the technology, access, evidence, dependencies, and continuity at that boundary.</p><div className="actions"><Link to="/controls">Explore OICC <ArrowRight/></Link><Link to="/standards">Browse primary sources</Link></div><div className="boundary"><span>DIGITAL SYSTEMS</span><b>IDENTITY · DATA · NETWORK · WORKFLOW</b><strong>OUTPUT<br/>BOUNDARY</strong><b>DEVICE · DOCUMENT · CUSTODY · SERVICE</b><span>PHYSICAL OPERATIONS</span></div></section><section className="split"><Label>THE OVERLOOKED ENDPOINT</Label><div><h2>Information crosses a boundary. <em>Governance often does not.</em></h2><div><p>Printers, copiers, scanners, label systems, and document workflows authenticate users, communicate across networks, run firmware, store information, create records, and depend on service paths.</p><p>They are connected operational systems. Treating them only as office equipment leaves ownership, access, evidence, recovery, and lifecycle decisions fragmented.</p></div></div></section><section className="dark overview"><Label>OICC / FOUNDATIONAL MODEL</Label><h2>Nine control areas.<br/>One operating boundary.</h2><div className="mini-grid">{controls.map(c=><Link to="/controls" key={c[0]}><span>{c[0]}</span><h3>{c[1]}</h3><ArrowRight/></Link>)}</div></section><section className="three">{[['PRIMARY SOURCES','Know what the authority actually says.','Separate laws, regulations, standards, frameworks, guidance, and OSI interpretation.','/standards'],['OPERATIONAL CONTEXT','Apply controls where work happens.','Use sector context without mistaking industry labels for a complete risk assessment.','/industries'],['INSTITUTIONAL DOCTRINE','Make the reasoning visible.','Eight principles define how OSI evaluates security, dependency, evidence, and continuity.','/doctrine']].map(x=><article key={x[0]}><Label>{x[0]}</Label><h3>{x[1]}</h3><p>{x[2]}</p><Link to={x[3]}>Explore →</Link></article>)}</section><CTA/></main>}
-function Controls(){return <main><section className="pagehead dark"><Label>OICC / OUTPUT INFRASTRUCTURE CRITICAL CONTROLS</Label><h1>A control model for the boundary between digital information and physical operations.</h1><p>OICC organizes the decisions required to govern output systems across security, operations, service, and lifecycle.</p></section><section className="cards">{controls.map(c=><article key={c[0]}><span>{c[0]}</span><h2>{c[1]}</h2><p>{c[2]}</p><h4>START WITH</h4><ul><li>Who owns this decision?</li><li>What evidence proves the control?</li><li>What happens when the dependency is unavailable?</li></ul></article>)}</section><CTA/></main>}
-function Standards(){const[q,setQ]=useState('');const list=useMemo(()=>sources.filter(s=>s.join(' ').toLowerCase().includes(q.toLowerCase())),[q]);return <main><section className="pagehead"><Label>AUTHORITY MAP / REVIEWED JULY 2026</Label><h1>Start with the source. Then interpret it in context.</h1><p>OSI distinguishes external authority from OSI analysis so organizations can see what is required, what is recommended, and where judgment begins.</p></section><section className="repository"><label><Search/><input value={q} onChange={e=>setQ(e.target.value)} placeholder="Search standards, sectors, and topics"/></label><div className="source-list">{list.map(s=><article key={s[0]}><div><span>{s[1]}</span><span>{s[2]}</span></div><h2>{s[0]}</h2><p>{s[3]}</p><a href={s[4]} target="_blank" rel="noreferrer">Open primary source <ExternalLink/></a></article>)}</div></section><CTA/></main>}
-function Industries(){return <main><section className="pagehead"><Label>OPERATIONAL CONTEXT</Label><h1>The industry matters. The operation matters more.</h1><p>Sector requirements help locate risk, but the decisive questions are still local: what information moves, who can reach it, what the workflow depends on, and what must continue.</p></section><section className="industry">{industries.map((x,i)=><article key={x[0]}><span>0{i+1}</span><h2>{x[0]}</h2><p>{x[1]}</p><h4>EXAMINE</h4><p>Ownership · access · data handling · evidence · dependency · recovery · lifecycle</p></article>)}</section><CTA/></main>}
-function Doctrine(){return <main><section className="pagehead dark"><Label>OSI DOCTRINE / VERSION 1.0</Label><h1>Principles before products. Reasoning before claims.</h1><p>These principles define the lens OSI uses to evaluate output security and operational continuity.</p></section><section className="doctrine">{principles.map((x,i)=><article key={x[0]}><span>{String(i+1).padStart(2,'0')}</span><div><h2>{x[0]}</h2><p>{x[1]}</p></div></article>)}</section><CTA/></main>}
-function Resources(){return <main><section className="pagehead"><Label>RESOURCE LIBRARY</Label><h1>Practical material, built for responsible use.</h1><p>The library connects control objectives to primary sources, operating questions, implementation evidence, and cross-functional decisions.</p></section><section className="resources">{[['AVAILABLE NOW','OICC Control Model','Nine control areas for assessing ownership, access, configuration, data, evidence, dependencies, continuity, and lifecycle.','/controls'],['AVAILABLE NOW','Primary Source Repository','A curated starting point for federal publications, regulatory resources, and sector guidance.','/standards'],['IN DEVELOPMENT','Output Security Assessment Guide','A cross-functional worksheet for examining systems, workflows, custody, service access, and recovery.'],['PUBLICATION ROADMAP','Mappings and field guides','Future publications will map OICC to common frameworks and provide focused guidance by workflow and operating context.']].map(x=><article key={x[1]}><span>{x[0]}</span><h2>{x[1]}</h2><p>{x[2]}</p>{x[3]&&<Link to={x[3]}>Open resource →</Link>}</article>)}</section><CTA/></main>}
-function About(){return <main><section className="pagehead"><Label>ABOUT / TRANSPARENCY</Label><h1>A clearer security conversation for a boundary every organization uses.</h1><p>The Output Security Institute develops practical, manufacturer-neutral guidance for systems that create, move, and manage physical information.</p></section><section className="about"><div><Label>MISSION</Label><h2>Make output security understandable, governable, and operationally useful.</h2></div><div><h3>What OSI does</h3><p>OSI translates established security and continuity principles into questions, control objectives, source maps, and decision tools for output environments.</p><h3>Independence</h3><p>OSI is an independent educational initiative. It is not affiliated with or endorsed by NIST, CISA, or the agencies and organizations referenced in its source library.</p><h3>What OSI does not do</h3><p>OSI does not create legal requirements, certify compliance, endorse manufacturers, or replace professional legal, regulatory, or security advice.</p><h3>Editorial method</h3><p>Primary sources are identified as such. OSI interpretation is labeled and reviewed separately. Dates and versions are preserved so readers can verify currency.</p></div></section><CTA/></main>}
-function App(){const[path,setPath]=useState(current());useEffect(()=>{const f=()=>setPath(current());addEventListener('popstate',f);return()=>removeEventListener('popstate',f)},[]);const Page={'/':Home,'/controls':Controls,'/standards':Standards,'/industries':Industries,'/doctrine':Doctrine,'/resources':Resources,'/about':About}[path]||Home;return <Shell path={path}><Page/></Shell>}
-export default App
+function DiscussionForm() {
+  function prepareEmail(event) {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    const name = String(form.get("name") ?? "").trim();
+    const organization = String(form.get("organization") ?? "").trim();
+    const email = String(form.get("email") ?? "").trim();
+    const continuity = String(form.get("continuity") ?? "").trim();
+    const subject = organization ? `Operational Infrastructure Discussion — ${organization}` : "Operational Infrastructure Discussion";
+    const body = [`Name: ${name}`, `Organization: ${organization}`, `Email: ${email}`, "", "What must continue:", continuity].join("\n");
+    window.location.href = `mailto:contact@matrixbusiness.biz?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  return (
+    <form className="discussion-form" onSubmit={prepareEmail}>
+      <div className="form-row">
+        <label><span>Name</span><input name="name" autoComplete="name" required /></label>
+        <label><span>Organization</span><input name="organization" autoComplete="organization" required /></label>
+      </div>
+      <label><span>Email</span><input name="email" type="email" autoComplete="email" required /></label>
+      <label><span>What must continue?</span><textarea name="continuity" rows={3} required /></label>
+      <button className="button button-light" type="submit">Prepare the discussion <span aria-hidden="true">↗</span></button>
+      <p className="form-note">This prepares an email to Matrix. Nothing is sent automatically.</p>
+    </form>
+  );
+}
+
+const Arrow = () => <span aria-hidden="true">↗</span>;
+
+export default function App() {
+  return (
+    <main>
+      <section className="hero" id="top">
+        <header className="site-header shell">
+          <a className="wordmark" href="#top" aria-label="Matrix Business Systems home">
+            <span>MATRIX</span>
+            <small>Business Systems</small>
+          </a>
+
+          <nav aria-label="Primary navigation">
+            <a href="#model">The model</a>
+            <a href="#recovery-paths">Recovery paths</a>
+            <a href="#best-fit">Best fit</a>
+            <a href="#discussion">Discussion</a>
+          </nav>
+
+          <details className="mobile-nav">
+            <summary>Menu</summary>
+            <div>
+              <a href="#model">The model</a>
+              <a href="#recovery-paths">Recovery paths</a>
+              <a href="#best-fit">Best fit</a>
+              <a href="#discussion">Discussion</a>
+            </div>
+          </details>
+
+          <a className="header-action" href="#discussion">
+            Start a discussion <Arrow />
+          </a>
+        </header>
+
+        <div className="hero-grid shell">
+          <div className="hero-copy">
+            <p className="eyebrow">Operational infrastructure</p>
+            <h1>Keep critical operations moving.</h1>
+            <p className="hero-deck">
+              Matrix redesigns the print, copy, scan, and label environments
+              critical work depends on, reducing unnecessary service dependency
+              while improving control, recovery, and continuity.
+            </p>
+            <div className="hero-actions">
+              <a className="button button-primary" href="#discussion">
+                Start with your environment <Arrow />
+              </a>
+              <a className="text-link" href="#model">
+                See how the model changes <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </div>
+
+          <div className="operating-model" aria-label="Traditional and redesigned recovery models">
+            <div className="model-label">
+              <span>OPERATING MODEL / 01</span>
+              <b>Recovery determines continuity.</b>
+            </div>
+            <div className="model-row inherited">
+              <p>Inherited model</p>
+              <div className="model-flow" aria-label="Problem, call and wait, outside recovery">
+                <span>Problem</span><i></i><span>Call + wait</span><i></i><span>Outside recovery</span>
+              </div>
+            </div>
+            <div className="model-row redesigned">
+              <p>Redesigned model</p>
+              <div className="model-flow" aria-label="Problem, guided recovery, continue">
+                <span>Problem</span><i></i><span>Guided recovery</span><i></i><span>Continue</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="outcome-rail shell" aria-label="Primary outcomes">
+          <div><span>01</span><b>Less outside intervention</b></div>
+          <div><span>02</span><b>Greater operational control</b></div>
+          <div><span>03</span><b>Faster recovery</b></div>
+          <div><span>04</span><b>Stronger continuity</b></div>
+        </div>
+      </section>
+
+      <section className="dependency section shell" id="model">
+        <div className="dependency-copy">
+          <p className="eyebrow">Inherited dependency</p>
+          <h2>Traditional service models are built around consumption.</h2>
+          <p>
+            Parts, fusers, drums, scheduled replacement, and technician labor do
+            more than create cost. They create an operating model that assumes
+            recurring outside intervention.
+          </p>
+        </div>
+
+        <div className="dependency-chain" aria-label="How consumption creates service dependency">
+          <article><span>01</span><h3>Wear components</h3><p>Mechanical processes consume parts over time.</p></article>
+          <article><span>02</span><h3>Replacement</h3><p>Consumed components require planned intervention.</p></article>
+          <article><span>03</span><h3>Service event</h3><p>Recovery moves outside the organization.</p></article>
+          <article><span>04</span><h3>Dependency</h3><p>The operation waits for availability, access, and response.</p></article>
+        </div>
+
+        <aside className="dependency-conclusion">
+          <span>THE DEVICE IS AN ENDPOINT</span>
+          <p>Print, copy, scan, and label systems connect people, information, workflows, security, and service. The device is only one part of the decision.</p>
+        </aside>
+      </section>
+
+      <section className="operating-change section shell dark-surface">
+        <div className="change-heading">
+          <p className="eyebrow">Change the operating model</p>
+          <h2>InPower<sup className="registered">®</sup> is not another managed print program.</h2>
+          <p>
+            InPower is a 24/7 inside-out operating model designed around
+            capability, recovery, and continuity, not the recurring service
+            intervention traditional programs were built to administer.
+          </p>
+        </div>
+
+        <div className="change-grid">
+          <article>
+            <span>TRADITIONAL RESPONSE</span>
+            <h3>Recovery begins outside.</h3>
+            <div className="change-flow"><b>Problem</b><i></i><b>Dispatch</b><i></i><b>Wait</b><i></i><b>Recover</b></div>
+          </article>
+          <article className="change-inside">
+            <span>INPOWER<sup className="registered">®</sup> RESPONSE</span>
+            <h3>Recovery begins where the interruption occurs.</h3>
+            <div className="change-flow"><b>Problem</b><i></i><b>Guided recovery</b><i></i><b>Continue</b></div>
+          </article>
+        </div>
+
+        <div className="principle-rail">
+          <article><span>01 / RECOGNIZE</span><h3>See the dependency.</h3></article>
+          <article><span>02 / REDESIGN</span><h3>Challenge the assumption.</h3></article>
+          <article><span>03 / TRANSFER</span><h3>Build capability inside.</h3></article>
+        </div>
+      </section>
+
+      <section className="technology-band shell" id="recovery-paths">
+        <div className="technology-intro">
+          <p className="eyebrow">Technology serves the model</p>
+          <h2>Three platforms. Three recovery paths.</h2>
+          <p>InPower<sup className="registered">®</sup> applies the recovery path supported by each platform&apos;s engineering.</p>
+        </div>
+        <div className="technology-list">
+          <article>
+            <span>01</span>
+            <div>
+              <p className="platform-type">SCREEN-LED RECOVERY</p>
+              <h3>Epson PrecisionCore</h3>
+              <p>Digitized imaging replaces many mechanical service dependencies with screen-guided recovery at the device panel.</p>
+            </div>
+          </article>
+          <article>
+            <span>02</span>
+            <div>
+              <p className="platform-type">HOT-SWAP CONTINUITY</p>
+              <h3>Brother Workhorse</h3>
+              <p>No onsite repair. A 24-hour hot-swap provides replacement at no charge to the customer, with no hard drive to remove or manage.</p>
+            </div>
+          </article>
+          <article>
+            <span>03</span>
+            <div>
+              <p className="platform-type">MODULAR RECOVERY</p>
+              <h3>Kyocera</h3>
+              <p>Replaceable subassemblies slide out and in, restoring operation without component-level repair.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section className="scenario-band shell dark-surface" id="best-fit">
+        <div className="scenario-heading">
+          <p className="eyebrow">Best-fit environments</p>
+          <h2>Where inside capability changes the outcome.</h2>
+        </div>
+        <div className="scenario-grid">
+          <article>
+            <span>REMOTE + HARD TO REACH</span>
+            <h3>When a service visit cannot be the first response.</h3>
+            <p>Locations where travel is delayed, expensive, restricted, weather-dependent, or unavailable.</p>
+          </article>
+          <article>
+            <span>CONTROLLED + COMPLIANCE-DRIVEN</span>
+            <h3>When outside intervention must be limited.</h3>
+            <p>Environments where access, network proximity, and chain of custody require greater control.</p>
+          </article>
+          <article>
+            <span>HEALTHCARE + CAPABLE TEAMS</span>
+            <h3>When qualified people are already close to the work.</h3>
+            <p>Technical, biomedical, facilities, or IT staff can follow guided recovery without taking on equipment repair.</p>
+          </article>
+        </div>
+        <aside className="responsibility-note">
+          <span>THE BOUNDARY MATTERS</span>
+          <div>
+            <h3>Capability, not a second job.</h3>
+            <p>InPower focuses on common recovery at the device panel. Your people follow structured guidance; they do not own technical repair. Anything outside that boundary is escalated.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section className="decision dark-surface" id="discussion">
+        <div className="fit-band shell">
+          <div className="fit-heading">
+            <p className="eyebrow">A discussion, not a conclusion</p>
+            <h2>Your environment decides.</h2>
+          </div>
+          <div className="fit-grid">
+            <article><span>01 / CONTINUITY</span><p>What work must continue, regardless of location, schedule, or outside availability?</p></article>
+            <article><span>02 / INTERRUPTION</span><p>What happens when printing, scanning, labeling, or document movement stops?</p></article>
+            <article><span>03 / DEPENDENCY</span><p>Which dependencies are intentional, and which were inherited without being questioned?</p></article>
+          </div>
+        </div>
+
+        <div className="cta shell">
+          <div>
+            <p className="eyebrow">Begin with your operation</p>
+            <h2>Your operation is the evidence.</h2>
+          </div>
+          <div className="cta-copy">
+            <p>Matrix begins with your environment. Together, we examine what must continue, where dependency exists, and whether changing the operating model would create a better outcome.</p>
+            <DiscussionForm />
+          </div>
+        </div>
+      </section>
+
+      <footer className="footer shell">
+        <a className="wordmark wordmark-footer" href="#top">
+          <span>MATRIX</span>
+          <small>Business Systems</small>
+        </a>
+        <div className="company-context">
+          <span>Lincoln, Nebraska</span>
+          <span>Creator of InPower<sup className="registered">®</sup></span>
+          <span>Designed to Change the Outcome.</span>
+        </div>
+        <div className="footer-contact">
+          <a href="mailto:contact@matrixbusiness.biz">contact@matrixbusiness.biz</a>
+          <a href="tel:+14024388030">402.438.8030</a>
+        </div>
+      </footer>
+    </main>
+  );
+}

@@ -355,6 +355,7 @@ button,input,textarea,select{font:inherit}
     radial-gradient(circle at 78% 30%,rgba(184,138,60,.12),transparent 25%),
     #171c20;
 }
+.economics-link{display:inline-flex;gap:36px;margin-top:28px;padding:14px 0;border-bottom:1px solid var(--amber);color:#fff;font-weight:700;text-decoration:none}.economics-link span{color:var(--amber)}
 
 .technology-fit{
   color:#fff;

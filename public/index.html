@@ -148,9 +148,31 @@
       <p>Every eliminated replacement part removes a future inventory event, maintenance event, and potential service interruption.</p>
     </div>
 
-    <figure class="evidence-image-frame light-frame parts-comparison-figure">
-      <img src="assets/evidence-fewer-parts.jpg" alt="Replacement parts comparison showing fewer replacement parts for a modern digital platform">
-      <figcaption>Source: Epson comparison of inkjet and heat-based laser device architectures. The 59% figure reflects the replacement parts shown in Epson's comparison. It demonstrates why architecture matters; it is not a claim about every platform used with InPower.</figcaption>
+    <figure class="parts-comparison-figure architecture-figure">
+      <div class="architecture-compare" aria-label="Comparison of replacement-component burden in heat-free inkjet and heat-based laser architectures">
+        <section class="architecture-path heat-free-path">
+          <header><span>Heat-free inkjet architecture</span><strong>Fewer component categories</strong></header>
+          <div class="process-path" aria-label="Simplified heat-free image path">
+            <b>Digital ejection</b><i></i><b>Media transport</b><i></i><b>Output</b>
+          </div>
+          <div class="component-list">
+            <p>Replacement categories shown in Epson's comparison</p>
+            <ul><li>Ink supply</li><li>Pickup rollers</li><li>Maintenance box</li></ul>
+          </div>
+        </section>
+
+        <section class="architecture-path heat-based-path">
+          <header><span>Heat-based laser architecture</span><strong>More mechanical stages</strong></header>
+          <div class="process-path" aria-label="Heat-based laser image path">
+            <b>Charge</b><i></i><b>Expose</b><i></i><b>Develop</b><i></i><b>Transfer</b><i></i><b>Fix with heat</b><i></i><b>Output</b>
+          </div>
+          <div class="component-list">
+            <p>Additional component categories shown</p>
+            <ul><li>Photoreceptors</li><li>Developer units</li><li>Waste toner</li><li>Fusing unit</li><li>Toner cartridges</li><li>Transfer units</li></ul>
+          </div>
+        </section>
+      </div>
+      <figcaption>Architecture summary reconstructed from Epson's published comparison for clarity. The 59% figure remains Epson's reported comparison; this diagram explains component categories and is not a separate calculation or a claim about every InPower platform.</figcaption>
     </figure>
   </section>
 

@@ -504,19 +504,6 @@ button,input,textarea,select{font:inherit}
   .footer{flex-direction:column}
 }
 
-/* Remove the outdated low-resolution percentage graphic. The architecture
-   comparison now carries the explanation without an unsupported image claim. */
-.evidence-layout-without-image{
-  display:block;
-  max-width:1100px;
-}
-.evidence-layout-without-image .cause-chain{
-  grid-template-columns:repeat(2,minmax(0,1fr));
-}
-@media(max-width:680px){
-  .evidence-layout-without-image .cause-chain{grid-template-columns:1fr}
-}
-
 /* Build 3: evidence-first homepage refinement */
 .ip-hero{
   background:
@@ -564,8 +551,8 @@ button,input,textarea,select{font:inherit}
   min-height:82vh;
   color:#fff;
   background:
-    linear-gradient(rgba(12,15,17,.74),rgba(12,15,17,.88)),
-    url("evidence-fewer-parts.jpg") center/cover no-repeat;
+    radial-gradient(circle at 78% 28%,rgba(184,138,60,.16),transparent 28%),
+    linear-gradient(145deg,#182025,#0c1012 72%);
 }
 .ip-capability h2{
   font-family:"IBM Plex Sans",Arial,sans-serif;

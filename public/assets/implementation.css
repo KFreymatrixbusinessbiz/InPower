@@ -367,3 +367,85 @@ body {
   .implementation-steps li { grid-template-columns: 2.5rem minmax(0, 1fr); }
   .boundary-columns { grid-template-columns: 1fr; }
 }
+
+/* Reading reset: the implementation page is an operating guide, not a slide deck. */
+.implementation .chapter-panel {
+  min-height: 64svh;
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 7vw, 7rem);
+}
+
+.implementation .opening-panel {
+  min-height: 78svh;
+  padding-top: clamp(8rem, 14vw, 11rem);
+}
+
+.implementation .editorial-line,
+.implementation .service-line,
+.implementation .final-line,
+.implementation h1 {
+  max-width: 22ch;
+  font-size: clamp(2.8rem, 5vw, 4.75rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.018em;
+}
+
+.implementation .question-block h2,
+.implementation .implementation-system h2 {
+  max-width: 18ch;
+  font-size: clamp(2.2rem, 4.1vw, 3.8rem) !important;
+  line-height: 1.1 !important;
+}
+
+.implementation .question-block p:not(.question-label),
+.implementation .platform-block p:last-child,
+.implementation .terms-block p:not(.question-label) {
+  max-width: 48rem;
+  font-size: clamp(1.08rem, 1.55vw, 1.35rem);
+  line-height: 1.62;
+}
+
+.implementation .question-block {
+  gap: clamp(1rem, 2vw, 1.75rem);
+}
+
+.implementation .implementation-system-panel {
+  min-height: auto;
+  padding-top: clamp(5rem, 8vw, 8rem);
+  padding-bottom: clamp(5rem, 8vw, 8rem);
+}
+
+.implementation .service-panel,
+.implementation .final-panel {
+  min-height: 68svh;
+}
+
+.implementation .chapter-panel > [data-reveal] {
+  position: relative;
+  top: auto;
+  transform: translateY(var(--reveal-y, 0));
+}
+
+@media (max-width: 760px) {
+  .implementation .chapter-panel {
+    min-height: auto;
+    padding: 5rem 1.5rem;
+  }
+
+  .implementation .opening-panel,
+  .implementation .service-panel,
+  .implementation .final-panel {
+    min-height: 72svh;
+  }
+
+  .implementation .editorial-line,
+  .implementation .service-line,
+  .implementation .final-line,
+  .implementation h1 {
+    font-size: clamp(2.55rem, 11vw, 3.65rem) !important;
+  }
+
+  .implementation .question-block h2,
+  .implementation .implementation-system h2 {
+    font-size: clamp(2rem, 9vw, 3rem) !important;
+  }
+}

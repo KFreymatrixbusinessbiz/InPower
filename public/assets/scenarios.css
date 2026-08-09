@@ -30,7 +30,7 @@ a{color:inherit}
 .flexibility-axes dt{color:var(--amber);font:500 10px var(--mono);letter-spacing:.14em;text-transform:uppercase}
 .flexibility-axes dd{margin:.4rem 0 0;color:#e3e6e6;font-size:14px}
 .scenario-intro{padding:clamp(6rem,10vw,10rem) clamp(2rem,7vw,7rem)}
-.scenario-intro h2,.scope-test h2,.scenario-close h2{max-width:15ch;margin:.7rem 0 1.4rem;font-family:var(--serif);font-size:clamp(2.7rem,5vw,4.8rem);font-weight:400;line-height:1.04}
+.scenario-intro h2,.scenario-close h2{max-width:15ch;margin:.7rem 0 1.4rem;font-family:var(--serif);font-size:clamp(2.7rem,5vw,4.8rem);font-weight:400;line-height:1.04}
 .scenario-intro>p:last-child{max-width:47rem;margin:0;color:var(--soft);font-size:1.1rem;line-height:1.7}
 .scenario-grid{display:grid;grid-template-columns:1fr 1fr;margin:0 clamp(2rem,7vw,7rem) clamp(7rem,11vw,11rem);border-top:1px solid var(--line);border-left:1px solid var(--line)}
 .scenario-card{padding:clamp(2rem,4vw,3.6rem);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -40,11 +40,8 @@ a{color:inherit}
 .scenario-card dl,.scenario-card dl div{margin:0}.scenario-card dl div{padding:1.2rem 0;border-top:1px solid var(--line)}
 .scenario-card dt{margin-bottom:.45rem;color:var(--soft);font:500 10px var(--mono);letter-spacing:.14em;text-transform:uppercase}
 .scenario-card dd{margin:0;font-size:1rem;line-height:1.65}
-.scope-test{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(3rem,8vw,9rem);padding:clamp(6rem,10vw,10rem) clamp(2rem,7vw,7rem);background:#e6e5df}
-.scope-test h2{margin-bottom:0}.scope-test>div:last-child{align-self:center;max-width:44rem}
-.scope-test>div:last-child p{font-size:1.1rem;line-height:1.75}.scope-test>div:last-child p+p{color:var(--soft)}
 .scenario-close{padding:clamp(7rem,12vw,12rem) clamp(2rem,7vw,7rem);color:#fff;background:#0b0e10}
 .scenario-close h2{max-width:18ch}.scenario-close a{display:inline-flex;gap:3rem;margin-top:2rem;padding:1rem 0;border-bottom:1px solid var(--amber);font-weight:600;text-decoration:none}
 .scenario-close a span{color:var(--amber)}
-@media(max-width:900px){.scenario-hero,.scope-test{grid-template-columns:1fr}.scenario-grid{grid-template-columns:1fr}.scenario-card h2,.mission{min-height:auto}}
-@media(max-width:680px){.scenario-header{padding:11px 14px}.scenario-header nav a{min-width:0;padding:8px}.scenario-header nav strong{display:none}.scenario-hero{min-height:auto;padding-top:8.5rem}.scenario-hero h1{font-size:clamp(3.5rem,15vw,5.5rem)}.scenario-grid{margin-left:1rem;margin-right:1rem}.scenario-card{padding:1.6rem}.scenario-intro,.scope-test,.scenario-close{padding-left:1.5rem;padding-right:1.5rem}}
+@media(max-width:900px){.scenario-hero{grid-template-columns:1fr}.scenario-grid{grid-template-columns:1fr}.scenario-card h2,.mission{min-height:auto}}
+@media(max-width:680px){.scenario-header{padding:11px 14px}.scenario-header nav a{min-width:0;padding:8px}.scenario-header nav strong{display:none}.scenario-hero{min-height:auto;padding-top:8.5rem}.scenario-hero h1{font-size:clamp(3.5rem,15vw,5.5rem)}.scenario-grid{margin-left:1rem;margin-right:1rem}.scenario-card{padding:1.6rem}.scenario-intro,.scenario-close{padding-left:1.5rem;padding-right:1.5rem}}

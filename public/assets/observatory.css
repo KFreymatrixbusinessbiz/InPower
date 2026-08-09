@@ -250,3 +250,105 @@ body {
   opacity: var(--reveal-opacity, 0);
   transform: translateY(var(--reveal-y, 18px));
 }
+
+/* Collision-proof editorial hierarchy. */
+.observatory .chapter-panel {
+  min-height: 68svh;
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 7vw, 7rem);
+}
+
+.observatory .observatory-cover {
+  min-height: 78svh;
+  padding-top: clamp(8rem, 14vw, 11rem);
+}
+
+.observatory .cover-inner h1 {
+  max-width: 14ch;
+  font-size: clamp(3.4rem, 6vw, 6.4rem) !important;
+  line-height: 1 !important;
+  letter-spacing: .01em;
+}
+
+.observatory .editorial-line {
+  width: min(100%, 24ch);
+  font-size: clamp(2.5rem, 4.5vw, 4.35rem) !important;
+  line-height: 1.12 !important;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.observatory .chapter-panel > [data-reveal] {
+  position: relative;
+  top: auto;
+  transform: translateY(var(--reveal-y, 0));
+}
+
+.observatory .archive {
+  padding-top: clamp(5rem, 8vw, 8rem);
+  padding-bottom: clamp(5rem, 8vw, 8rem);
+}
+
+.observatory .observation {
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(2.5rem, 5vw, 5rem);
+  padding: clamp(3.75rem, 6vw, 5.5rem) 0;
+}
+
+.observatory .observation h2 {
+  max-width: 18ch;
+  font-size: clamp(2.2rem, 3.6vw, 3.85rem) !important;
+  line-height: 1.12 !important;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.observatory .observation dd {
+  font-size: clamp(1.08rem, 1.55vw, 1.35rem);
+  line-height: 1.58;
+}
+
+.observatory .observation dl {
+  gap: clamp(1.75rem, 3vw, 2.75rem);
+}
+
+@media (max-width: 1050px) {
+  .observatory .observation {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .observatory .observation h2,
+  .observatory .observation dd {
+    max-width: 46rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .observatory .chapter-panel {
+    min-height: auto;
+    padding: 5rem 1.5rem;
+  }
+
+  .observatory .observatory-cover {
+    min-height: 72svh;
+    padding-top: 8rem;
+  }
+
+  .observatory .cover-inner h1 {
+    font-size: clamp(3rem, 13vw, 4.5rem) !important;
+  }
+
+  .observatory .editorial-line {
+    font-size: clamp(2.3rem, 10vw, 3.35rem) !important;
+  }
+
+  .observatory .archive {
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  .observatory .observation h2 {
+    font-size: clamp(2rem, 8.5vw, 2.8rem) !important;
+  }
+}

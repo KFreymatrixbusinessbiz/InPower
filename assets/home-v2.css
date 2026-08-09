@@ -167,6 +167,30 @@ button,input,textarea,select{font:inherit}
 }
 .outcome-grid p{font-size:16px;line-height:1.6;color:#454945}
 
+.scenario-bridge{
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(440px,1.1fr);
+  gap:clamp(48px,7vw,100px);
+  align-items:center;
+  color:#fff;
+  background:#171c20;
+}
+.scenario-bridge-copy h2{
+  max-width:10ch;
+  margin:12px 0 20px;
+  font-size:clamp(36px,4.25vw,62px);
+  line-height:1.02;
+  letter-spacing:-.045em;
+  font-weight:600;
+}
+.scenario-bridge-copy>p:last-of-type{max-width:620px;color:#c9cecf;font-size:17px;line-height:1.7}
+.scenario-bridge-copy a{display:inline-flex;gap:36px;margin-top:24px;padding:14px 0;border-bottom:1px solid var(--amber);color:#fff;font-weight:700;text-decoration:none}
+.scenario-bridge-copy a span{color:var(--amber)}
+.scenario-bridge-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.scenario-bridge-grid div{min-height:180px;padding:26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.scenario-bridge-grid span{display:block;color:var(--amber);font:11px var(--mono)}
+.scenario-bridge-grid strong{display:block;margin-top:58px;font-size:20px;line-height:1.25}
+
 .evidence-dark{
   color:var(--white);
   background:
@@ -212,6 +236,7 @@ button,input,textarea,select{font:inherit}
   color:var(--graphite);
   white-space:nowrap;
 }
+.big-number.parts-claim{max-width:8ch;margin-bottom:18px;font-size:clamp(52px,6.2vw,92px);line-height:.9;white-space:normal}
 .number-statement h2{font-size:clamp(36px,4.5vw,64px)}
 .light-frame{border-color:#aaa99f;background:#fff}
 .parts-comparison-figure{min-width:0;margin:0}
@@ -221,6 +246,29 @@ button,input,textarea,select{font:inherit}
   font:12px/1.55 var(--sans);
   border-top:1px solid #d4d1c8;
 }
+
+.architecture-figure{
+  margin:0;
+  min-width:0;
+  border:1px solid #aaa99f;
+  background:#f8f8f5;
+}
+.architecture-compare{display:grid;grid-template-columns:1fr 1fr}
+.architecture-path{display:flex;flex-direction:column;min-width:0;padding:clamp(24px,3vw,38px)}
+.architecture-path+.architecture-path{border-left:1px solid #aaa99f}
+.architecture-path header{min-height:92px;padding-bottom:22px;border-bottom:1px solid #cbc8bf}
+.architecture-path header span{display:block;color:var(--amber);font:700 10px var(--mono);letter-spacing:.13em;text-transform:uppercase}
+.architecture-path header strong{display:block;margin-top:12px;font-size:clamp(21px,2vw,29px);line-height:1.1}
+.process-path{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:30px 0}
+.process-path b{padding:9px 10px;border:1px solid #aaa99f;background:#fff;font-size:11px;line-height:1.2;font-weight:700}
+.process-path i{width:14px;height:1px;background:var(--amber)}
+.component-list{margin-top:auto;padding-top:22px;border-top:1px solid #cbc8bf}
+.component-list p{margin:0 0 14px;color:#5b5f59;font:700 10px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.component-list ul{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0;padding:0;list-style:none}
+.component-list li{position:relative;padding:10px 10px 10px 24px;background:#e7e6e0;font-size:12px;line-height:1.3}
+.component-list li::before{content:"";position:absolute;left:10px;top:15px;width:5px;height:5px;background:var(--amber)}
+.heat-free-path{background:linear-gradient(145deg,rgba(184,138,60,.08),transparent 60%)}
+.heat-free-path .component-list ul{grid-template-columns:1fr}
 
 .waste-evidence{background:#f8f6f0}
 .waste-layout{
@@ -331,6 +379,48 @@ button,input,textarea,select{font:inherit}
     radial-gradient(circle at 78% 30%,rgba(184,138,60,.12),transparent 25%),
     #171c20;
 }
+.economics-link{display:inline-flex;gap:36px;margin-top:28px;padding:14px 0;border-bottom:1px solid var(--amber);color:#fff;font-weight:700;text-decoration:none}.economics-link span{color:var(--amber)}
+
+.technology-fit{
+  color:#fff;
+  background:#0d1113;
+}
+.technology-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--line);
+  border-left:1px solid var(--line);
+}
+.technology-grid article{
+  display:flex;
+  flex-direction:column;
+  min-height:390px;
+  padding:clamp(26px,3vw,38px);
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:#121719;
+}
+.technology-grid h3{
+  margin:clamp(44px,5vw,72px) 0 18px;
+  font-size:clamp(25px,2.25vw,34px);
+  line-height:1.08;
+}
+.technology-grid p{
+  margin:0 0 30px;
+  color:#c7cdce;
+  font-size:16px;
+  line-height:1.65;
+}
+.technology-grid strong{
+  display:block;
+  margin-top:auto;
+  padding-top:22px;
+  border-top:1px solid rgba(255,255,255,.12);
+  color:#fff;
+  font-size:13px;
+  line-height:1.55;
+  font-weight:600;
+}
 
 .discussion{
   display:grid;
@@ -381,12 +471,20 @@ button,input,textarea,select{font:inherit}
   .main-nav{display:none;position:absolute;top:82px;left:0;right:0;flex-direction:column;align-items:stretch;padding:24px;background:#0d1012}
   .main-nav.open{display:flex}
   .menu-toggle{display:block}
-  .hero,.parts-evidence,.waste-layout,.inpower-section,.discussion,.evidence-layout{grid-template-columns:1fr}
+  .hero,.parts-evidence,.waste-layout,.inpower-section,.discussion,.evidence-layout,.scenario-bridge{grid-template-columns:1fr}
   .hero{padding-top:140px}
   .hero-proof{max-width:580px}
   .outcome-grid{grid-template-columns:1fr 1fr}
   .capability-flow{grid-template-columns:1fr 1fr}
+  .technology-grid{grid-template-columns:1fr}
+  .technology-grid article{min-height:auto}
   .inpower-mark{position:static;max-width:390px}
+}
+
+@media(max-width:820px){
+  .architecture-compare{grid-template-columns:1fr}
+  .architecture-path+.architecture-path{border-left:0;border-top:1px solid #aaa99f}
+  .architecture-path header{min-height:auto}
 }
 
 @media(max-width:680px){
@@ -395,13 +493,28 @@ button,input,textarea,select{font:inherit}
   .main-nav{top:72px}
   .hero{grid-template-columns:1fr;min-height:auto;padding-top:132px;padding-bottom:72px}
   .hero h1{font-size:clamp(58px,17vw,88px)}
-  .outcome-grid,.recovery-compare,.boundary-grid,.capability-flow,.pillars{grid-template-columns:1fr}
+  .outcome-grid,.recovery-compare,.boundary-grid,.capability-flow,.pillars,.scenario-bridge-grid{grid-template-columns:1fr}
+  .scenario-bridge-grid div{min-height:auto}
+  .scenario-bridge-grid strong{margin-top:34px}
   .recovery-compare article+article,.boundary-grid article+article{border-left:0;border-top:1px solid var(--line)}
   .cause-chain{grid-template-columns:1fr}
   .cause-chain>div+div{border-left:0;border-top:1px solid var(--line)}
   .overhead-list li{font-size:21px}
   .discussion form{grid-template-columns:1fr}
   .footer{flex-direction:column}
+}
+
+/* Remove the outdated low-resolution percentage graphic. The architecture
+   comparison now carries the explanation without an unsupported image claim. */
+.evidence-layout-without-image{
+  display:block;
+  max-width:1100px;
+}
+.evidence-layout-without-image .cause-chain{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+}
+@media(max-width:680px){
+  .evidence-layout-without-image .cause-chain{grid-template-columns:1fr}
 }
 
 /* Build 3: evidence-first homepage refinement */
@@ -484,4 +597,51 @@ button,input,textarea,select{font:inherit}
 
 .inpower-home-v2 .discussion-copy h2{
   font-family:"IBM Plex Sans",Arial,sans-serif;
+}
+
+/* Editorial reset: preserve the industrial voice without treating every idea as a headline. */
+.section-pad{
+  padding-top:clamp(82px,7vw,104px);
+  padding-bottom:clamp(82px,7vw,104px);
+}
+.section-header{margin-bottom:clamp(38px,4vw,52px)}
+.section-header h2,
+.evidence-heading h2,
+.number-statement h2,
+.inpower-copy h2,
+.discussion h2{
+  font-size:clamp(36px,4.25vw,62px);
+  line-height:1.02;
+  letter-spacing:-.045em;
+}
+.hero{
+  min-height:min(900px,100svh);
+  padding-top:clamp(132px,13vh,164px);
+  padding-bottom:clamp(68px,8vh,88px);
+}
+.hero h1,
+.ip-hero h1{
+  max-width:10ch;
+  font-size:clamp(62px,7.4vw,106px);
+  line-height:.92;
+  letter-spacing:-.065em;
+}
+.hero-deck{font-size:clamp(18px,1.45vw,23px);line-height:1.55}
+.outcome-grid article{min-height:250px;padding:30px}
+.outcome-grid h3{margin:48px 0 14px;font-size:clamp(25px,2.2vw,34px);line-height:1.08}
+.big-number{font-size:clamp(84px,10vw,156px)}
+.evidence-conclusion{font-size:clamp(28px,3.2vw,46px)}
+.capability-flow>div{min-height:245px}
+.capability-flow strong{margin:54px 0 18px}
+.economics{min-height:56vh}
+
+@media(max-width:680px){
+  .section-pad{padding-top:68px;padding-bottom:68px}
+  .hero h1,.ip-hero h1{font-size:clamp(52px,15vw,72px)}
+  .section-header h2,
+  .evidence-heading h2,
+  .number-statement h2,
+  .inpower-copy h2,
+  .discussion h2{font-size:clamp(34px,10.5vw,48px)}
+  .outcome-grid article,.capability-flow>div{min-height:auto}
 }

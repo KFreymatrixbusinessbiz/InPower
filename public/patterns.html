@@ -3,148 +3,50 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Operating Evidence | InPower Field Patterns</title>
-    <meta name="description" content="See recurring dependency and recovery patterns observed across aviation, banking, education, logistics, healthcare, and government operations." />
+    <title>Evidence &amp; Trust | InPower</title>
+    <meta name="description" content="Inspect the sources, interpretations, operating implications, and limits behind InPower's evidence." />
     <link rel="canonical" href="https://inpower.biz/patterns.html" />
-    <meta property="og:type" content="website" /><meta property="og:site_name" content="InPower" /><meta property="og:title" content="Operating Evidence | InPower Field Patterns" /><meta property="og:description" content="Recurring dependency and recovery patterns observed across real operating environments." /><meta property="og:url" content="https://inpower.biz/patterns.html" /><meta property="og:image" content="https://inpower.biz/assets/inpower-social.jpg" /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
+    <meta property="og:type" content="website" /><meta property="og:site_name" content="InPower" /><meta property="og:title" content="Evidence &amp; Trust | InPower" /><meta property="og:description" content="See what supports InPower's reasoning—and where that support ends." /><meta property="og:url" content="https://inpower.biz/patterns.html" /><meta property="og:image" content="https://inpower.biz/assets/inpower-social.jpg" />
     <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:image" content="https://inpower.biz/assets/inpower-social.jpg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/patterns.css" />
-    <link rel="stylesheet" href="assets/editorial-pacing.css" />
-    <link rel="stylesheet" href="assets/accessibility.css" />
+    <link rel="stylesheet" href="assets/patterns.css" /><link rel="stylesheet" href="assets/editorial-pacing.css" /><link rel="stylesheet" href="assets/accessibility.css" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <a class="chapter-home" href="index.html" aria-label="InPower home">INPOWER®</a>
-    <nav class="chapter-nav" aria-label="Chapter navigation">
-      <a href="capability.html"><span>Previous</span><strong>Capability</strong></a>
-      <a href="index.html"><span>Home</span></a>
-      <a href="scenarios.html"><span>Next</span><strong>Scenarios</strong></a>
-    </nav>
-    <main id="main-content" class="patterns" aria-label="Operating patterns and field evidence">
-      <section class="chapter-panel opening-panel">
-        <h1 class="editorial-line opening-line" data-reveal>Operating patterns repeat.<span>The conditions change.</span></h1>
+    <nav class="chapter-nav" aria-label="Chapter navigation"><a href="capability.html"><span>Previous</span><strong>Capability</strong></a><a href="index.html"><span>Home</span></a><a href="scenarios.html"><span>Next</span><strong>Scenarios</strong></a></nav>
+    <main id="main-content" class="evidence-trust" aria-labelledby="evidence-title">
+      <section class="evidence-hero section-shell"><p class="eyebrow">Evidence &amp; trust</p><h1 id="evidence-title">The reasoning should be inspectable.</h1><p class="hero-deck">InPower separates what a source establishes, what Matrix concludes from it, what it may mean operationally, and where the evidence stops.</p><p class="evidence-principle">Evidence should show not only what supports a claim, but where the support ends.</p></section>
+      <nav class="evidence-index section-shell" aria-label="Evidence page sections"><a href="#engineering">Engineering evidence</a><a href="#operations">From engineering to operations</a><a href="#boundary">Recovery boundary</a><a href="#observations">Field observations</a><a href="#sources">Source register</a><a href="#method">Evidence method</a></nav>
+
+      <section id="engineering" class="evidence-section section-shell" aria-labelledby="engineering-title">
+        <header class="section-intro"><p class="eyebrow">Engineering evidence</p><h2 id="engineering-title">Begin with what the architecture establishes.</h2><p>Epson currently provides the clearest primary-source trail for the engineering used in selected InPower environments. Epson engineering and InPower's operating-model interpretation are separate.</p></header>
+        <article class="evidence-chain" aria-labelledby="heat-free-claim"><header class="claim-header"><p class="evidence-type">Manufacturer source</p><h3 id="heat-free-claim">Heat-Free architecture uses fewer printing steps and maintenance parts.</h3></header><div class="chain-row"><section><h4>Source fact</h4><p>Epson states that PrecisionCore Heat-Free technology minimizes the steps needed to print. It describes an all-in-one chip replacing bulky, complex maintenance parts, which can result in reduced waste and fewer service visits.</p></section><section><h4>InPower interpretation</h4><p>Fewer mechanical stages and replacement categories can reduce the number of component-related interventions an operating environment must plan around.</p></section><section><h4>Operational implication</h4><p>Architecture can influence service exposure, inventory requirements, recovery planning, and continuity.</p></section><section class="boundary-note"><h4>Boundary</h4><p>Fewer components do not prove that every organization will experience fewer service events or lower total operating cost.</p></section></div><footer class="chain-source"><span>Epson America · Heat-Free Technology — Inkjet Printers</span><a href="https://epson.com/heat-free-inkjet-printers" rel="noopener noreferrer">Review the Epson source</a></footer></article>
+        <article class="evidence-chain" aria-labelledby="warmup-claim"><header class="claim-header"><p class="evidence-type">Manufacturer source</p><h3 id="warmup-claim">Heat-Free printing does not require conventional fuser warm-up.</h3></header><div class="chain-row compact-chain"><section><h4>Source fact</h4><p>Epson states that its heat-free design does not require the printer to warm up, producing a fast first page out.</p></section><section><h4>InPower interpretation</h4><p>Removing fuser warm-up changes one source of delay and energy demand within the print process.</p></section><section class="boundary-note"><h4>Boundary</h4><p>This does not establish end-to-end workflow speed, availability, energy savings, or recovery performance for every implementation.</p></section></div><footer class="chain-source"><span>Epson America · Heat-Free Technology — Inkjet Printers</span><a href="https://epson.com/heat-free-inkjet-printers" rel="noopener noreferrer">Review the Epson source</a></footer></article>
+        <figure class="reconstruction"><div class="reconstruction-flow" role="img" aria-labelledby="reconstruction-caption"><div><span>Fewer component categories</span></div><div><span>Fewer potential component-related interventions</span></div><div><span>Opportunity to change service and inventory requirements</span></div><div><span>Economic effect depends on the operating environment</span></div></div><figcaption id="reconstruction-caption"><strong>InPower reconstruction based on Epson's Heat-Free explanation.</strong> This illustrates operating reasoning; it is not an independent performance calculation or a claim about every InPower platform.</figcaption></figure>
       </section>
 
-      <section class="chapter-panel">
-        <p class="editorial-line" data-reveal>Most organizations believe their interruptions are unique.</p>
-      </section>
+      <section id="operations" class="evidence-section dark-section section-shell" aria-labelledby="operations-title"><header class="section-intro"><p class="eyebrow">From engineering to operations</p><h2 id="operations-title">A mechanism creates an opportunity—not a guaranteed result.</h2></header><div class="interpretation-grid"><article><span>01</span><h3>Service exposure</h3><p>Fewer component categories may reduce potential component-related interventions. Actual service demand depends on the device, configuration, volume, environment, use, and support model.</p></article><article><span>02</span><h3>Access boundary</h3><p>Fewer unnecessary external interventions can mean fewer occasions requiring external physical or device access. It does not establish generalized cybersecurity improvement, compliance, or breach prevention.</p></article><article><span>03</span><h3>Economics</h3><p>Architectural differences do not create automatic savings. A defensible assessment considers fleet, volume, supplies, service events, parts, labor, travel, internal recovery effort, inventory, recovery time, workflow interruption, and training or transition.</p></article></div></section>
 
-      <section class="chapter-panel long-pause-panel">
-        <p class="editorial-line" data-reveal>Most are expressions of the same operating pattern.</p>
-      </section>
+      <section id="boundary" class="evidence-section section-shell" aria-labelledby="boundary-title"><header class="section-intro"><p class="eyebrow">Recovery boundary</p><h2 id="boundary-title">Capability moves inside only where the boundary permits it.</h2><p>The public method distinguishes defined common conditions appropriate for trained internal response from work requiring specialized service. It does not publish or imply a platform-specific action list that has not been established.</p></header><div class="boundary-method"><article><p class="evidence-type">Inside the boundary</p><h3>Defined internal response</h3><p>Common conditions that an implementation has determined are appropriate for designated, trained personnel using known guidance.</p></article><i aria-hidden="true"></i><article class="boundary-center"><p class="evidence-type">The boundary</p><h3>Stop and decide</h3><p>The point at which authorization, complexity, tooling, diagnosis—or a formally established safety, warranty, security, or firmware limitation—requires escalation.</p></article><i aria-hidden="true"></i><article><p class="evidence-type">Outside the boundary</p><h3>Specialized service</h3><p>Conditions beyond the approved internal response remain with qualified external expertise and the applicable support process.</p></article></div><aside class="governance-note"><strong>What is not yet established publicly</strong><p>Current site material does not identify the platform/action matrix, authorized personnel, formal stop conditions, escalation triggers, or established safety, warranty, security, and firmware authorities. These remain program-governance content gaps—not facts to be supplied by marketing language.</p></aside><div class="knowledge-note"><p class="eyebrow">Training &amp; factory knowledge</p><h3>Origin and interpretation are not interchangeable.</h3><div><p><strong>Manufacturer-originated information</strong> means technical or product information published or approved by the manufacturer.</p><p><strong>Matrix/InPower procedure or interpretation</strong> means operating guidance created or applied by Matrix from legitimate source material and operating experience.</p></div><p>The current public record does not establish who provides InPower training, what the curriculum covers, how competency is documented, or how procedures are approved and maintained. Until those records are verified, InPower does not represent its training as manufacturer-provided.</p></div></section>
 
-      <section class="chapter-panel pattern-panel law-panel law-one" aria-label="Law 01">
-        <article class="pattern-card law-card" data-reveal>
-          <p class="pattern-number">LAW 01</p>
-          <h2>Capability determines recovery long before interruption occurs.</h2>
-          <p class="observed">Observed in Aviation &amp; Aerospace.</p>
-          <div class="law-body">
-            <p class="pattern-observation">Machines fail.</p>
-            <p class="pattern-observation">Operating models determine how long failure lasts.</p>
-          </div>
-          <p class="pattern-question">Where does recovery actually begin in your organization?</p>
-        </article>
-      </section>
+      <section id="observations" class="evidence-section observation-section section-shell" aria-labelledby="observations-title"><header class="section-intro"><p class="eyebrow">Field observations</p><h2 id="observations-title">Operating experience, with its limits stated.</h2><p><strong>Practical observation—not an audited case study.</strong> These anonymized records describe conditions encountered by Matrix. Customer identities remain protected, and the observations are not represented as independently verified results.</p></header><div class="observation-list">
+        <article><p class="evidence-type">Field observation · Aviation</p><h3>Recovery could not depend on business hours.</h3><dl><div><dt>Environment</dt><dd>24/7 distributed operations</dd></div><div><dt>Operating condition</dt><dd>Locations across the country required print and scanning wherever aircraft operations were active.</dd></div><div><dt>Model change</dt><dd>Resilient A4 and high-volume platforms were matched to the work, with recovery designed around local capability rather than routine dispatch.</dd></div><div><dt>Observation</dt><dd>The organization gained a support model aligned to continuous operations and distributed locations.</dd></div><div><dt>Limitation</dt><dd>No named customer, comparative measure, or independently reviewable implementation record is published here.</dd></div></dl></article>
+        <article><p class="evidence-type">Field observation · Education</p><h3>Self-support became part of the replacement decision.</h3><dl><div><dt>Environment</dt><dd>Multi-building community college</dd></div><div><dt>Operating condition</dt><dd>The organization sought to reduce operating cost and dependence on outside response across a large device environment.</dd></div><div><dt>Model change</dt><dd>A measured migration began toward platforms designated personnel could support within an internal recovery boundary.</dd></div><div><dt>Observation</dt><dd>After approximately two years of operating experience, the college accelerated its plan to replace approximately 250 devices, citing cost, performance, and self-support.</dd></div><div><dt>Limitation</dt><dd>The approximate figure and stated reasons are Matrix observations, not an audited purchasing or savings analysis.</dd></div></dl></article>
+        <article><p class="evidence-type">Field observation · Banking</p><h3>Outside access and continuity were considered together.</h3><dl><div><dt>Environment</dt><dd>Regulated branch operations</dd></div><div><dt>Operating condition</dt><dd>Branches required dependable output while maintaining tighter control over who entered the environment and when.</dd></div><div><dt>Model change</dt><dd>Device selection and recovery procedures reduced the need for routine outside intervention.</dd></div><div><dt>Observation</dt><dd>Mixed Epson and Brother environments have supported branch operations for more than four years.</dd></div><div><dt>Limitation</dt><dd>“Supported” does not establish a measured uptime, security, cost, or service-call result.</dd></div></dl></article>
+        <article><p class="evidence-type">Field observation · Logistics</p><h3>The larger outcome existed beyond the device.</h3><dl><div><dt>Environment</dt><dd>Coast-to-coast receiving workflow</dd></div><div><dt>Operating condition</dt><dd>Paper received at distributed locations delayed information needed by the central inventory process.</dd></div><div><dt>Model change</dt><dd>Scanning moved to receiving, where information first entered the operation.</dd></div><div><dt>Observation</dt><dd>Matrix observed an approximate four-day reduction in the inventory-information cycle while output was stabilized at each location.</dd></div><div><dt>Limitation</dt><dd>No named customer, methodology, baseline data, or independent verification is published here.</dd></div></dl></article>
+      </div></section>
 
-      <section class="chapter-panel pattern-panel law-panel law-two" aria-label="Law 02">
-        <article class="pattern-card law-card" data-reveal>
-          <p class="pattern-number">LAW 02</p>
-          <h2>Organizations adapt to dependency before they eliminate it.</h2>
-          <p class="observed">Observed in Healthcare.</p>
-          <div class="law-body">
-            <p class="pattern-observation">Clinical staff rarely adapt to equipment.</p>
-            <p class="pattern-observation">They adapt to dependency.</p>
-          </div>
-          <p class="pattern-question">What interruption has your organization quietly accepted?</p>
-        </article>
-      </section>
+      <section id="sources" class="evidence-section source-section section-shell" aria-labelledby="sources-title"><header class="section-intro"><p class="eyebrow">Source register</p><h2 id="sources-title">Primary sources visitors can inspect.</h2><p>The register is intentionally limited to sources verified for claims presented on this page.</p></header><div class="source-register">
+        <article><div class="source-meta"><span>SR-001</span><strong>Manufacturer source</strong></div><h3>Heat-Free Technology — Inkjet Printers</h3><dl><div><dt>Publisher</dt><dd>Epson America, Inc.</dd></div><div><dt>Applicable technology</dt><dd>Epson PrecisionCore Heat-Free business inkjet</dd></div><div><dt>Claim supported</dt><dd>Reduced printing-process steps; fewer complex maintenance parts; potential for reduced waste and fewer service visits; no conventional warm-up requirement.</dd></div><div><dt>Retrieved</dt><dd>September 9, 2026</dd></div><div><dt>Limitation</dt><dd>Manufacturer source. It does not establish InPower-specific service, cost, training, recovery, or customer outcomes.</dd></div></dl><a href="https://epson.com/heat-free-inkjet-printers" rel="noopener noreferrer">Open Epson's Heat-Free Technology source</a></article>
+        <article><div class="source-meta"><span>SR-002</span><strong>Manufacturer source</strong></div><h3>Products Standard Warranty Agreement</h3><dl><div><dt>Publisher</dt><dd>Brother International Corporation</dd></div><div><dt>Applicable technology</dt><dd>Eligible Brother products and applicable warranty plans</dd></div><div><dt>Claim supported</dt><dd>Brother describes exchange, depot, and onsite service structures, including troubleshooting before an eligible exchange replacement is shipped.</dd></div><div><dt>Retrieved</dt><dd>September 9, 2026</dd></div><div><dt>Limitation</dt><dd>Eligibility and terms vary. The source does not establish that every Brother device qualifies or that Brother endorses InPower.</dd></div></dl><a href="https://www.brother-usa.com/support/product-warranty-information" rel="noopener noreferrer">Open Brother's warranty information</a></article>
+        <article><div class="source-meta"><span>SR-003</span><strong>Manufacturer source</strong></div><h3>Product Repair, Parts &amp; Service Options</h3><dl><div><dt>Publisher</dt><dd>Brother International Corporation</dd></div><div><dt>Applicable technology</dt><dd>Brother product repair and self-service conditions</dd></div><div><dt>Claim supported</dt><dd>Repair authority, experience, genuine-parts access, and warranty limitations matter when determining who should perform a recovery action.</dd></div><div><dt>Retrieved</dt><dd>September 9, 2026</dd></div><div><dt>Limitation</dt><dd>This source does not authorize Matrix or customer personnel to perform any specific recovery action.</dd></div></dl><a href="https://www.brother-usa.com/product-repair" rel="noopener noreferrer">Open Brother's repair information</a></article>
+        <article><div class="source-meta"><span>SR-004</span><strong>First-party implementer source</strong></div><h3>Matrix Business Systems</h3><dl><div><dt>Publisher</dt><dd>Matrix Business Systems</dd></div><div><dt>Applicable scope</dt><dd>InPower implementer identity and contact accountability</dd></div><div><dt>Claim supported</dt><dd>Matrix Business Systems publicly identifies itself as the organization behind InPower and provides a business contact destination.</dd></div><div><dt>Retrieved</dt><dd>September 9, 2026</dd></div><div><dt>Limitation</dt><dd>A Matrix first-party page establishes identity; it is not independent validation of InPower outcomes.</dd></div></dl><a href="https://www.matrixbusiness.biz/" rel="noopener noreferrer">Visit Matrix Business Systems</a></article>
+      </div></section>
 
-      <section class="chapter-panel pattern-panel law-panel law-three" aria-label="Law 03">
-        <article class="pattern-card law-card" data-reveal>
-          <p class="pattern-number">LAW 03</p>
-          <h2>Every outside dependency transfers control.</h2>
-          <div class="law-body">
-            <p class="observed">Observed in Government.</p>
-            <p class="pattern-observation">The farther recovery moves from the organization, the less control remains inside it.</p>
-          </div>
-          <p class="pattern-question">Where has your organization transferred control without naming it?</p>
-        </article>
-      </section>
-
-      <section class="chapter-panel pattern-panel law-panel law-four" aria-label="Law 04">
-        <article class="pattern-card law-card" data-reveal>
-          <p class="pattern-number">LAW 04</p>
-          <h2>Recovery is designed before disruption occurs.</h2>
-          <p class="observed">Observed in Logistics.</p>
-          <div class="law-body">
-            <p class="pattern-observation">Recovery is rarely determined during an interruption.</p>
-            <p class="pattern-observation">It is determined by where capability already exists.</p>
-          </div>
-        </article>
-      </section>
-
-      <section class="field-evidence" aria-labelledby="field-evidence-title">
-        <header class="field-evidence-header">
-          <p class="pattern-number">Field evidence</p>
-          <h2 id="field-evidence-title">The same dependency appears in very different operations.</h2>
-          <p>These anonymized examples document operating conditions encountered by Matrix. They are practical observations, not audited case studies, and customer identities remain protected.</p>
-        </header>
-
-        <div class="evidence-cases">
-          <article>
-            <p class="case-sector">Aviation · 24/7 distributed operations</p>
-            <h3>Recovery could not depend on business hours.</h3>
-            <dl>
-              <div><dt>Condition</dt><dd>Locations across the country required print and scanning wherever aircraft operations were active.</dd></div>
-              <div><dt>Model change</dt><dd>Resilient A4 and high-volume platforms were matched to the work, with recovery designed around local capability rather than routine dispatch.</dd></div>
-              <div><dt>Observed outcome</dt><dd>The organization gained a support model aligned to continuous operations and distributed locations.</dd></div>
-            </dl>
-          </article>
-
-          <article>
-            <p class="case-sector">Education · Multi-building campus</p>
-            <h3>Self-support became part of the replacement decision.</h3>
-            <dl>
-              <div><dt>Condition</dt><dd>A community college needed to reduce operating cost and dependence on outside response across a large device environment.</dd></div>
-              <div><dt>Model change</dt><dd>The organization began a measured migration to platforms its own trained personnel could support safely.</dd></div>
-              <div><dt>Observed outcome</dt><dd>After two years of operating experience, the college accelerated its plan to replace approximately 250 devices, citing cost, performance, and self-support.</dd></div>
-            </dl>
-          </article>
-
-          <article>
-            <p class="case-sector">Banking · Regulated branch operations</p>
-            <h3>Outside access and continuity had to be considered together.</h3>
-            <dl>
-              <div><dt>Condition</dt><dd>Branches required dependable output while maintaining tighter control over who entered the environment and when.</dd></div>
-              <div><dt>Model change</dt><dd>Device selection and recovery procedures reduced the need for routine outside intervention.</dd></div>
-              <div><dt>Observed outcome</dt><dd>Mixed Epson and Brother environments have supported branch continuity for more than four years.</dd></div>
-            </dl>
-          </article>
-
-          <article>
-            <p class="case-sector">Logistics · Coast-to-coast workflow</p>
-            <h3>The larger outcome existed beyond the device.</h3>
-            <dl>
-              <div><dt>Condition</dt><dd>Paper received at distributed locations delayed information needed by the central inventory process.</dd></div>
-              <div><dt>Model change</dt><dd>Scanning moved to receiving, where the information first entered the operation.</dd></div>
-              <div><dt>Observed outcome</dt><dd>The workflow reduced the inventory-information cycle by approximately four days while stabilizing output at each location.</dd></div>
-            </dl>
-          </article>
-        </div>
-      </section>
-
-      <section class="chapter-panel thesis-panel">
-        <p class="thesis-line" data-reveal>The device may be visible.<span>The operating dependency is the real pattern.</span></p>
-      </section>
-
-      <section class="chapter-panel final-panel">
-        <p class="editorial-line" data-reveal>Once you recognize the pattern...<span>you begin seeing it everywhere.</span></p>
-      </section>
+      <section id="method" class="evidence-section method-section section-shell" aria-labelledby="method-title"><header class="section-intro"><p class="eyebrow">Evidence method</p><h2 id="method-title">How InPower classifies support.</h2></header><div class="method-grid"><article><h3>Manufacturer source</h3><p>Primary technical, product, service, or warranty information published by the manufacturer.</p></article><article><h3>InPower interpretation</h3><p>Matrix/InPower's analysis of what legitimate source material may mean operationally.</p></article><article><h3>Field observation</h3><p>An actual Matrix/InPower operating observation that has not been established as an audited or independently verifiable case study.</p></article><article><h3>Verified case study</h3><p>A classification reserved for material supported by adequate underlying documentation and authority to publish. No current field observation on this page is classified this way.</p></article></div><div class="method-copy"><p>Sources can change, and manufacturer documentation can be updated. InPower distinguishes source material from its own interpretation and does not represent an observation as an audited result unless adequate evidence establishes that classification.</p><p>Material evidence errors should be corrected when identified. Questions or source corrections may be sent to <a href="mailto:contact@matrixbusiness.biz?subject=InPower%20evidence%20correction">contact@matrixbusiness.biz</a>.</p></div><div class="implementer"><p class="eyebrow">Accountability</p><h3>InPower is implemented by Matrix Business Systems.</h3><p>This statement identifies the organization accountable for the operating model. It is not a manufacturer endorsement or independent validation of results.</p><a href="https://www.matrixbusiness.biz/" rel="noopener noreferrer">About Matrix Business Systems</a></div></section>
     </main>
-
     <script src="assets/patterns.js"></script>
   </body>
 </html>

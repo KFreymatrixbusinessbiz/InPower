@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/readiness.css">
+  <link rel="stylesheet" href="assets/readiness-phase4.css">
   <link rel="stylesheet" href="assets/accessibility.css">
 </head>
 <body>
@@ -55,26 +56,40 @@
         <label><input type="checkbox" name="signal" value="contract" data-theme="Economics"><span><strong>The current commercial model is paid to respond to service demand rather than reduce it.</strong><small>The incentives behind the support model may no longer match the desired outcome.</small></span></label>
       </fieldset>
 
-      <section class="assessment-result" aria-live="polite">
-        <div><p class="eyebrow">Your operating signals</p><strong id="signal-count">0 conditions selected</strong></div>
-        <div><p id="result-copy">Select the conditions that apply. The useful result is not the number; it is the pattern they reveal.</p><p id="theme-copy"></p></div>
+      <section class="assessment-result" aria-live="polite" aria-atomic="true">
+        <div><p class="eyebrow">Your operating model</p><strong id="signal-count">0 conditions selected</strong></div>
+        <div><p id="result-copy">Select the conditions that apply. The useful result is not the number; it is what the pattern suggests you should examine next.</p><p id="theme-copy"></p></div>
       </section>
       <p id="privacy-note" class="privacy-note">Your selections remain in this browser. Nothing is submitted or stored.</p>
     </form>
 
-    <section class="interpretation">
-      <div><p class="eyebrow">Interpret the result</p><h2>A signal is a reason to examine, not a reason to replace.</h2></div>
+    <section class="interpretation" aria-labelledby="interpretation-title">
+      <div><p class="eyebrow">Questions worth examining</p><h2 id="interpretation-title">A signal is a reason to examine—not a reason to replace.</h2></div>
       <div>
-        <p><strong>Few or no signals:</strong> conventional service may already match the operating requirement.</p>
-        <p><strong>Several related signals:</strong> examine that dependency before the next acquisition or contract renewal.</p>
-        <p><strong>Signals across several themes:</strong> the issue may be the operating model rather than an isolated device or service event.</p>
+        <p>What operational consequence follows an output interruption?</p>
+        <p>What recovery capability already exists—and what capability does the organization actually want to own?</p>
+        <p>Where should appropriate recovery begin, and what should remain with outside specialists?</p>
+        <p>Does the current support model fit distributed locations, schedules and workflows?</p>
       </div>
     </section>
 
+    <section class="matrix-examines" aria-labelledby="matrix-examines-title">
+      <div><p class="eyebrow">What Matrix would examine</p><h2 id="matrix-examines-title">Fit is determined by the environment—not a questionnaire score.</h2></div>
+      <ul>
+        <li>Workflow and locations</li>
+        <li>Existing fleet and output requirements</li>
+        <li>Current dependencies and continuity needs</li>
+        <li>Existing aptitude, competence and resources</li>
+        <li>Willingness to participate in appropriate recovery</li>
+        <li>Technology fit and the support boundary that should remain</li>
+      </ul>
+    </section>
+
     <section class="assessment-close">
-      <p class="eyebrow">Begin with the operating model</p>
-      <h2>We will help determine what should change before deciding what should be replaced.</h2>
-      <div><a href="mailto:contact@matrixbusiness.biz?subject=InPower%20readiness%20discussion">Discuss your assessment <span>→</span></a><a href="tel:+14024388030">Call 402-438-8030 <span>→</span></a></div>
+      <p class="eyebrow">The next question</p>
+      <h2>What capability belongs where?</h2>
+      <p>See how InPower evaluates the operating environment before establishing an appropriate recovery model.</p>
+      <div><a href="implementation.html">See how InPower works <span>→</span></a><a href="index.html">Return to the operating model <span>→</span></a></div>
     </section>
   </main>
   <script src="assets/readiness.js"></script>

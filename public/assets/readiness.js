@@ -11,10 +11,10 @@ function updateAssessment() {
   count.textContent = `${total} ${total === 1 ? 'condition' : 'conditions'} selected`;
   themes.textContent = activeThemes.length ? `Themes exposed: ${activeThemes.join(' · ')}` : '';
 
-  if (total === 0) result.textContent = 'Select the conditions that apply. The useful result is not the number; it is the pattern they reveal.';
-  else if (total <= 2) result.textContent = 'A limited dependency may be addressable without changing the entire operating model. Examine the selected condition and its consequence.';
-  else if (activeThemes.length === 1) result.textContent = 'Several related signals point to a concentrated dependency. That area deserves examination before the next acquisition, renewal, or service decision.';
-  else result.textContent = 'The signals cross operating themes. This suggests the issue may be the operating model, not an isolated device or service event.';
+  if (total === 0) result.textContent = 'Select the conditions that apply. The useful result is not the number; it is what the pattern suggests you should examine next.';
+  else if (total <= 2) result.textContent = 'Your selections identify a specific operating condition worth examining. Consider its consequence, the capability already available, and whether the present response model fits the work.';
+  else if (activeThemes.length === 1) result.textContent = 'Your selections concentrate in one part of the operating model. Examine that dependency before the next acquisition, renewal, or support decision.';
+  else result.textContent = 'Your selections cross operating themes. Examine whether workflow, locations, internal capability, recovery preference, and outside-support reliance still fit together.';
 }
 
 inputs.forEach((input) => input.addEventListener('change', updateAssessment));
